@@ -1,0 +1,14 @@
+================================================================
+  KURAL DENETİMİ — dashboard yönetişim QA
+================================================================
+  [PASS] C1 Satır içi stil (style=) yok
+  [PASS] C2 Satır içi olay (on*=) yok
+  [PASS] C3 index.html'de inline <script> yok
+  [PASS] C4 Kodda gömülü veri yok
+  [PASS] C5 Veri bağlı kaynaktan (fetch + google.script.run)
+  [PASS] C6 Tek tasarım sistemi dosyası
+  [PASS] C7 Para tr-TR + ₺ ve GG.AA.YYYY biçimi
+  [PASS] C8 Yükleniyor/boş/hata durumları
+----------------------------------------------------------------
+  SONUÇ: TÜM KONTROLLER PASS ✓
+================================================================

@@ -20,8 +20,12 @@ yol gösterir. Her şey **tarayıcı tabanlıdır** (iş bilgisayarına kurulum 
 4. 📸 **Ekran görüntüsü:** `ekran-goruntuleri/project-rule.png` (talimat alanında kuralların göründüğü hal).
 
 ## 2) Üretim Standardı (Skill / Project Bilgisi)
-1. Project → **Knowledge / Bilgi** (veya Skills) bölümüne `talimatlar/uretim-standardi.md` dosyasını yükle.
-2. 📸 `ekran-goruntuleri/project-skill.png`.
+1. Project sayfasında sağdaki **"Files" (Dosyalar)** kutusunun sağ üstündeki **`+`** işaretine tıkla
+   (veya kutunun ortasındaki "Add PDFs, documents, or other text…" alanına tıkla).
+2. Bilgisayarına indirdiğin `talimatlar/uretim-standardi.md` dosyasını seç → yükle. Dosya listede görünür.
+   - `.md` kabul edilmezse `.txt` olarak yeniden adlandır ya da içeriğini kopyalayıp yapıştır.
+   - Not: Bazı arayüzlerde bu bölüm "Knowledge / Bilgi" adıyla geçebilir; işlev aynıdır (proje bilgisi).
+3. 📸 `ekran-goruntuleri/project-skill.png`.
 
 ## 3) Google Sheet + Connector (Canlı Veri)
 1. [sheets.new](https://sheets.new) → yeni Sheet → **Dosya > İçe aktar** → `veri/veri.csv` yükle

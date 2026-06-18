@@ -26,8 +26,10 @@ Her adımda **📸** gördüğün yerde ekran görüntüsü al (sonra rapora/tes
 5. **claude.ai** → sol menü **Projects → New project** → ad: `S2 Kalite`.
 6. Projede **"Instructions / Talimatlar"** alanını aç.
    GitHub'da `talimatlar/kalici-talimat.md` içeriğini **kopyala → yapıştır → kaydet**. → 📸 (`project-rule.png`)
-7. Projede **"Knowledge / İçerik ekle"** bölümüne `talimatlar/uretim-standardi.md`
-   dosyasını yükle (indirip dosya olarak ekleyebilirsin). → 📸 (`project-skill.png`)
+7. Projede **sağdaki "Files" (Dosyalar) kutusunun sağ üstündeki `+`** işaretine tıkla
+   → bilgisayarına indirdiğin `talimatlar/uretim-standardi.md` dosyasını seç ve yükle.
+   *(`.md` kabul etmezse `.txt` yap ya da içeriğini kopyalayıp o alana yapıştır.)* → 📸 (`project-skill.png`)
+   > Not: Bazı arayüzlerde bu bölüm "Knowledge/Bilgi" adıyla geçer; işlev aynıdır.
 
 ## BÖLÜM 3 — Sheet'i Claude'a bağla (canlı veri)
 8. claude.ai **Settings → Connectors** → **Google Drive / Sheets**'i bağla, izin ver.

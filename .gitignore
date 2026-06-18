@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# Editör / sistem
+.DS_Store
+*.swp
+
+# LibreOffice / geçici
+.~lock.*#

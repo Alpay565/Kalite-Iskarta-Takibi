@@ -11,6 +11,7 @@ Gerekli :  pip install fpdf2   (DejaVu fontu sistemde mevcut)
 """
 
 from pathlib import Path
+import struct
 from fpdf import FPDF
 from fpdf.enums import XPos, YPos
 from fpdf.fonts import FontFace
@@ -161,6 +162,36 @@ def icerik():
                    "(4) standardın uygulanışı, (5) canlı veri değişikliği, (6) bağlam bütçesi. "
                    "Yönetişim QA betiği (otomasyon/kural-denetimi.py) satır içi stil/script ve gömülü "
                    "veri denetimini 8/8 PASS ile geçer (otomasyon/kanit-log.txt)."))
+
+    B.append(("h1", "9. Ekran Görüntüleri ve Kanıt"))
+    B.append(("p", "Aşağıda dashboard'un dört ekranının gerçek görüntüleri yer alır. claude.ai "
+                   "(Project/Rule/Skill), Connector, iki tur, canlı veri ve tetikleyici kanıtları "
+                   "gerçek oturumlardan eklenir; ilgili PNG'ler ekran-goruntuleri/ klasörüne konup "
+                   "rapor yeniden üretildiğinde otomatik olarak buraya gömülür."))
+    B.append(("h2", "Dashboard ekranları"))
+    B.append(("gorsel", "dashboard-genel.png",
+              "E1 — Genel Bakış (6 KPI: Üretim, Hata, PPM, FPY, Iskarta ₺, En Sık Hata)"))
+    B.append(("gorsel", "dashboard-trend.png",
+              "E2 — Trend (aylık PPM + önceki dönem referansı; aylık ıskarta maliyeti)"))
+    B.append(("gorsel", "dashboard-pareto.png",
+              "E3 — Pareto (hata tipleri 80/20 + hat bazında kırılım)"))
+    B.append(("gorsel", "dashboard-tablo.png",
+              "E4 — Kritik Tablo (en yüksek maliyetli kayıtlar + durum rozetleri)"))
+    B.append(("h2", "Süreç ve kanıt görüntüleri (gerçek oturumlardan eklenecek)"))
+    for dosya, ad in [
+        ("project-rule.png", "Project — Kalıcı Talimat (Rule) yüklü"),
+        ("project-skill.png", "Project — Üretim Standardı (Skill) yüklü"),
+        ("connector-bagli.png", "Connector — Google Sheets bağlı"),
+        ("turA-deneme1.png", "Tur A — boş sohbet, 1. deneme"),
+        ("turA-deneme2.png", "Tur A — boş sohbet, 2. deneme"),
+        ("turB-uretim1.png", "Tur B — Project içinde üretim, 1. deneme"),
+        ("turB-uretim2.png", "Tur B — kararlılık, 2. deneme"),
+        ("dogrulama-canli-once.png", "Canlı veri — değişiklik öncesi"),
+        ("dogrulama-canli-sonra.png", "Canlı veri — değişiklik sonrası"),
+        ("tetikleyici-log.png", "Bonus — tetikleyici çalıştırma günlüğü"),
+        ("tetikleyici-eposta.png", "Bonus — günlük kalite özeti e-postası"),
+    ]:
+        B.append(("gorsel", dosya, ad))
     return B
 
 
@@ -248,6 +279,68 @@ def pdf_tablo(pdf, basliklar, satirlar):
             for h in satir:
                 r.cell(h)
     pdf.ln(3)
+
+
+def png_boyut(p):
+    try:
+        with open(p, "rb") as f:
+            d = f.read(24)
+        if d[:8] == b"\x89PNG\r\n\x1a\n":
+            return struct.unpack(">II", d[16:24])
+    except Exception:
+        pass
+    return None
+
+
+def pdf_h2(pdf, t):
+    if pdf.get_y() > 248:
+        pdf.add_page()
+    pdf.ln(2)
+    pdf.set_font("DejaVu", "B", 12)
+    pdf.set_text_color(*YESIL)
+    pdf.multi_cell(0, 7, t, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.set_text_color(*INK)
+    pdf.ln(1)
+
+
+def pdf_gorsel(pdf, dosya, baslik):
+    yol = KOK / "ekran-goruntuleri" / dosya
+    if yol.exists():
+        en = 174.0
+        boyut = png_boyut(yol)
+        yuk = en * (boyut[1] / boyut[0]) if boyut else 95.0
+        if yuk > 240:                       # çok uzunsa yükseklikten kıs
+            yuk = 240.0
+            en = yuk * (boyut[0] / boyut[1])
+        if pdf.get_y() + yuk + 12 > 285:    # sığmıyorsa sayfa kır
+            pdf.add_page()
+        pdf.set_font("DejaVu", "B", 9.5)
+        pdf.set_text_color(*INK)
+        pdf.multi_cell(0, 5.4, "▸ " + baslik, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        pdf.set_draw_color(*GRI)
+        pdf.set_line_width(0.2)
+        x = 18 + (174 - en) / 2
+        pdf.image(str(yol), x=x, w=en)
+        pdf.rect(x, pdf.get_y() - yuk, en, yuk)   # ince çerçeve
+        pdf.ln(5)
+    else:
+        if pdf.get_y() + 30 > 285:
+            pdf.add_page()
+        pdf.set_font("DejaVu", "B", 9.5)
+        pdf.set_text_color(*INK)
+        pdf.multi_cell(0, 5.4, "▸ " + baslik, new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        y = pdf.get_y()
+        pdf.set_draw_color(*GRI)
+        pdf.set_line_width(0.3)
+        pdf.set_fill_color(245, 247, 244)
+        pdf.rect(18, y, 174, 20, style="DF")
+        pdf.set_xy(18, y + 6)
+        pdf.set_font("DejaVu", "", 9)
+        pdf.set_text_color(*GRI)
+        pdf.multi_cell(174, 5, "[ Ekran görüntüsü eklenecek ]  →  ekran-goruntuleri/" + dosya, align="C")
+        pdf.set_y(y + 20)
+        pdf.ln(5)
+        pdf.set_text_color(*INK)
 
 
 def kutu(pdf, x, y, w, h, baslik, alt, fill, cizgi, metin=INK, kesik=False):
@@ -338,6 +431,8 @@ def pdf_uret():
         "liste": lambda p, b: pdf_liste(p, b[1]),
         "tablo": lambda p, b: pdf_tablo(p, b[1], b[2]),
         "diyagram": lambda p, b: pdf_diyagram(p),
+        "h2": lambda p, b: pdf_h2(p, b[1]),
+        "gorsel": lambda p, b: pdf_gorsel(p, b[1], b[2]),
     }
     for blok in icerik():
         eslesme[blok[0]](pdf, blok)
@@ -361,10 +456,19 @@ def md_uret():
             continue
         if t == "h1":
             satir += ["", "## " + blok[1], ""]
+        elif t == "h2":
+            satir += ["", "### " + blok[1], ""]
         elif t == "p":
             satir += [blok[1], ""]
         elif t == "liste":
             satir += ["- " + o for o in blok[1]] + [""]
+        elif t == "gorsel":
+            dosya, baslik = blok[1], blok[2]
+            if (KOK / "ekran-goruntuleri" / dosya).exists():
+                satir += ["**" + baslik + "**", "",
+                          "![" + baslik + "](../ekran-goruntuleri/" + dosya + ")", ""]
+            else:
+                satir += ["**" + baslik + "** — _eklenecek: `ekran-goruntuleri/" + dosya + "`_", ""]
         elif t == "tablo":
             basliklar, satirlar = blok[1], blok[2]
             satir += ["| " + " | ".join(basliklar) + " |",

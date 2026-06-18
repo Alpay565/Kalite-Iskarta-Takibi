@@ -31,9 +31,14 @@ Her adımda **📸** gördüğün yerde ekran görüntüsü al (sonra rapora/tes
    *(`.md` kabul etmezse `.txt` yap ya da içeriğini kopyalayıp o alana yapıştır.)* → 📸 (`project-skill.png`)
    > Not: Bazı arayüzlerde bu bölüm "Knowledge/Bilgi" adıyla geçer; işlev aynıdır.
 
-## BÖLÜM 3 — Sheet'i Claude'a bağla (canlı veri)
-8. claude.ai **Settings → Connectors** → **Google Drive / Sheets**'i bağla, izin ver.
-   Bölüm 1'deki Sheet'e erişebildiğinden emin ol. → 📸 (`connector-bagli.png`)
+## BÖLÜM 3 — Sheet'i Claude'a bağla (canlı veri / Connector)
+8. **Google Drive bağlayıcısını kur ve Sheet'i bağla:**
+   - **a) Bağlayıcıyı aç (bir kerelik):** Sol **en altta adına** (**"Alpay Mutlu · Pro plan"**) tıkla →
+     **Settings / Ayarlar → Connectors / Bağlayıcılar → Google Drive → Connect** → Google hesabınla izin ver.
+     *(Göremezsen "Browse / Add connectors" ya da "Feature preview" altına bak.)*
+   - **b) Sheet'i sohbete getir:** Projede **New chat** aç → mesaj kutusundaki **`+`** →
+     **Google Drive / Add from Drive** → Bölüm 1'deki Sheet'i (örn. *S2-Kalite-Veri*) seç. → 📸 (`connector-bagli.png`)
+   > Files = sabit dosya; **Connector = canlı bağlantı** (Sheet değişince Claude güncel halini okur). "Canlı veri" puanı buradan gelir.
 
 ## BÖLÜM 4 — İki tur (kanıt sohbetleri)
 > Amaç: yönetişimin işe yaradığını göstermek. **Gerçek** sohbetler olmalı (uydurma yasak).

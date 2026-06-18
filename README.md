@@ -2,6 +2,9 @@
 
 AdAstra × VALEO Kurumsal YZ Programı — **Ödev #1**
 
+> 🟢 **İlk kez mi başlıyorsun? → [BAŞLANGIÇ kılavuzu (`BASLANGIC.md`)](BASLANGIC.md)**
+> Ne yapman gerektiğini sıfırdan, adım adım anlatır.
+
 | | |
 |---|---|
 | **Ad Soyad** | Alpay Mutlu |

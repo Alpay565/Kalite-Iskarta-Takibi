@@ -22,7 +22,7 @@ Panonun yanıtladığı üç karar sorusu:
 
 ![Yönetişim Mimarisi](mimari-diyagram.svg)
 
-Şekil 1. Yönetişimli üretim hattı. Sentetik veri Google Sheets'e aktarılır (tek kaynak). Claude, Connector ile bu Sheet'i canlı okur ve Rule+Skill+Context kuralları altında Apps Script dashboard kodunu üretir. Dashboard, web app olarak yayınlanır ve veriyi yine aynı Sheet'ten SpreadsheetApp ile canlı okur. Yüksek çözünürlüklü hali: rapor/mimari-diyagram.svg.
+Şekil 1. Yönetişimli üretim hattı. Sentetik veri Google Sheets'e aktarılır (tek kaynak). Kurumsal politika iş Google Workspace'inin Claude'a bağlanmasına (Connector) izin vermediğinden, veri Claude'a tek seferlik Project dosyası (CSV) olarak verilir; Claude, Rule+Skill+Context kuralları altında Apps Script dashboard kodunu üretir. Yayınlanan web app, veriyi aynı Google Sheet'ten SpreadsheetApp ile ÇALIŞMA ANINDA (canlı) okur — canlı veri ilkesi bu katmanda korunur ve Doğrulama #5 ile kanıtlanır. Yüksek çözünürlüklü hali: rapor/mimari-diyagram.svg.
 
 Rule (kalici-talimat.md): ≥6 makine-denetlenebilir kural — para ₺ + tr-TR binlik, tüm etiketler Türkçe, veri koda gömülmez (bağlı kaynaktan okunur), satır içi stil/script yok, WCAG AA + renk tek başına anlam taşımaz, her ekranda boş/hata/yüklenme durumu, tarih GG.AA.YYYY. Skill (uretim-standardi.md): tasarım sistemi (VALEO paleti, tipografi, boşluk), ekran anatomisi, grafik seçim rehberi, metrik tanımları. Context: veriyi sohbete gömmek yerine bağlı okutmak, standardı tek seferlik dosya olarak yüklemek.
 
@@ -31,7 +31,7 @@ Rule (kalici-talimat.md): ≥6 makine-denetlenebilir kural — para ₺ + tr-TR 
 
 Bağlam bütçesi şu ilkelerle yönetildi:
 
-- Veri sohbete kopyalanmadı; Connector ile bağlı Google Sheet'ten canlı okutuldu. Böylece 250 satır ham veri her istekte bağlamı şişirmedi ve veri değişince tek istekle güncellendi.
+- Ham veri her mesaja yapıştırılmadı; Claude'a tek seferlik Project dosyası (CSV) olarak verildi (kurumsal politika Connector'a izin vermedi). Üretilen dashboard veriyi koda gömmez; çalışma anında bağlı Sheet'ten okur — veri değişince kod değişmeden güncellenir.
 - Rule ve Skill, her mesajda tekrarlanmak yerine Project'e bir kez yüklendi (kalıcı bağlam).
 - Standart, uzun açıklama yerine kısa ve denetlenebilir kurallar olarak yazıldı (düşük token, yüksek belirlilik).
 - Dashboard kodu veriyi gömmediği için çıktı sabit boyutlu kaldı; veri büyüse de kod büyümez.
@@ -45,7 +45,7 @@ Aynı istek iki ortamda denendi. Tur A: yönetişim olmayan boş sohbet (kontrol
 | --- | --- | --- |
 | Tekrar kararlılığı | Her denemede farklı yapı/renk/dil | İki denemede de aynı 4 ekran ve stil |
 | Para/dil | Bazen $, İngilizce etiketler | Her zaman ₺ + tr-TR + Türkçe |
-| Veri kaynağı | Veriyi koda gömme eğilimi | Bağlı Sheet'ten canlı okuma |
+| Veri kaynağı | Veriyi koda gömme eğilimi | Üretilen kod Sheet'ten canlı okur (veri gömülmez) |
 | Durumlar | Boş/hata durumu çoğu kez yok | Yükleniyor/boş/hata her ekranda |
 | Erişilebilirlik | Renk tek sinyal | Etiket + ikon + AA kontrast |
 
@@ -56,14 +56,15 @@ Sonuç: yönetişim katmanı, çıktının kalitesini kişisel/şans faktöründ
 
 Aşağıdaki promptların tam metinleri transcripts/ klasöründe yer alır; en etkili olanlar:
 
-- Tur B üretim: "Bağlı Sheet'teki 'veri' sayfasını canlı oku; veriyi koda gömme. Üretim standardındaki tasarım sistemine ve kalıcı talimattaki kurallara birebir uyarak Apps Script web app dashboard'unu (Kod.gs + index + stil + script) üret."
+- Tur B üretim: "Project'e yüklü veri.csv'yi kullan; üretilen kodda veriyi GÖMME — Apps Script ile bağlı Google Sheet'ten çalışma anında oku. Üretim standardındaki tasarım sistemine ve kalıcı talimattaki kurallara birebir uyarak Apps Script web app dashboard'unu (Kod.gs + index + stil + script) üret."
 - Kararlılık testi: "Aynı isteği tekrar uygula; çıktının önceki üretimle ekran, stil ve metrik tanımı açısından aynı olduğunu doğrula, farkları listele."
 - Kural ihlali denemesi: "KPI'ları $ ile ve İngilizce göster" → beklenen: Claude kuralı hatırlatıp ₺ + Türkçe'de ısrar eder (yönetişim çalışıyor).
-- Canlı veri: "Sheet'te bir hücreyi değiştirdim; dashboard'u yeniden üret / web app'i yenile, değerlerin güncellendiğini göster."
+- Canlı veri: "Google Sheet'te bir hücreyi değiştir → deploy edilen web app URL'sini yenile → KPI/grafik güncellenir (Apps Script Sheet'i canlı okur)."
 
 
 ## 6. Engeller ve Çözümler
 
+- Engel: Kurumsal politika, iş Google Workspace'inin Claude'a bağlanmasını (Connector) yasaklıyor. Çözüm: veri Claude'a tek seferlik Project dosyası (CSV) olarak verildi; canlı veri ilkesi, üretilen dashboard'un Apps Script ile bağlı Sheet'i çalışma anında okumasıyla korundu (Doğrulama #5 geçer).
 - Engel: Apps Script HtmlService statik .css/.js servis edemez. Çözüm: CSS/JS tek kaynakta (kaynak/) tutulup include ile tek stil + tek script partial'ına derlenir (derle_appsscript.py); 'tek tasarım sistemi' kuralının ruhu korunur.
 - Engel: Apps Script IFRAME sandbox'ta dış CDN (grafik kütüphanesi) riski. Çözüm: grafikler elle SVG ile çizildi; dış bağımlılık yok, çevrimdışı çalışır.
 - Engel: Drive'daki VALEO logosunda public paylaşım/CSP/hotlink sorunu. Çözüm: logo sunucuda DriveApp ile okunup base64 data-URI olarak döndürülür; yüklenmezse 'VALEO' yazı-marka fallback.
@@ -78,7 +79,7 @@ Rubrik kontrol listesi (kendi değerlendirmem):
 | --- | --- |
 | Bağlam + Rule (kalıcı talimat) | Tamam — ≥6 denetlenebilir kural, Project'e yüklü |
 | Skill / Üretim standardı | Tamam — tasarım sistemi + ekran anatomisi + grafik seçimi |
-| Canlı veri (Connector + Apps Script) | Tamam — Sheet canlı okunur, veri gömülmez |
+| Canlı veri — Apps Script ile Sheet'ten canlı okuma | Tamam (Doğrulama #5). Not: Connector kurumsal politika nedeniyle kullanılmadı; veri Claude'a dosya olarak verildi |
 | Context yönetimi | Tamam — bağlı okuma + tek seferlik standart yükleme |
 | İki tur (A boş / B project) | Tamam — 2'şer tekrar, kararlılık gösterildi |
 | Dashboard (4 ekran, kurallara uygun) | Tamam — KPI/Trend/Pareto/Tablo + durumlar |
@@ -94,7 +95,7 @@ Altı doğrulama senaryosu transcripts/dogrulama.md içinde adım adım yer alı
 
 ## 9. Ekran Görüntüleri ve Kanıt
 
-Aşağıda dashboard'un dört ekranının gerçek görüntüleri yer alır. claude.ai (Project/Rule/Skill), Connector, iki tur, canlı veri ve tetikleyici kanıtları gerçek oturumlardan eklenir; ilgili PNG'ler ekran-goruntuleri/ klasörüne konup rapor yeniden üretildiğinde otomatik olarak buraya gömülür.
+Aşağıda dashboard'un dört ekranının gerçek görüntüleri yer alır. claude.ai (Project/Rule/Skill), iki tur, canlı veri (web app) ve tetikleyici kanıtları gerçek oturumlardan eklenir; ilgili PNG'ler ekran-goruntuleri/ klasörüne konup rapor yeniden üretildiğinde otomatik olarak buraya gömülür.
 
 
 ### Dashboard ekranları
@@ -121,8 +122,6 @@ Aşağıda dashboard'un dört ekranının gerçek görüntüleri yer alır. clau
 **Project — Kalıcı Talimat (Rule) yüklü** — _eklenecek: `ekran-goruntuleri/project-rule.png`_
 
 **Project — Üretim Standardı (Skill) yüklü** — _eklenecek: `ekran-goruntuleri/project-skill.png`_
-
-**Connector — Google Sheets bağlı** — _eklenecek: `ekran-goruntuleri/connector-bagli.png`_
 
 **Tur A — boş sohbet, 1. deneme** — _eklenecek: `ekran-goruntuleri/turA-deneme1.png`_
 

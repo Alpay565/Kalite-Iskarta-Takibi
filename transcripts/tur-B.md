@@ -1,6 +1,6 @@
 # Tur B — Project İçinde (Yönetişimli Üretim)
 
-> **Amaç:** Rule + Skill + Context yüklü Project'te, **bağlı Sheet'ten canlı veriyle**
+> **Amaç:** Rule + Skill + Context yüklü Project'te, **Project'e yüklü veri dosyasıyla**
 > dashboard üretmek. Beklenen: çıktı **tekrar üretilebilir** (2 denemede de aynı standart),
 > kurallar otomatik uygulanır.
 >
@@ -10,11 +10,12 @@
 ## Ön Koşullar (docs/kurulum-kilavuzu.md'de adım adım)
 - Project oluşturuldu; **talimatlar/kalici-talimat.md** içeriği Project talimatına yapıştırıldı.
 - **talimatlar/uretim-standardi.md** Skill/Project bilgisi olarak yüklendi.
-- **veri/veri.csv** Google Sheet'e aktarıldı (sayfa adı: `veri`) ve **Connector** ile Project'e bağlandı.
+- **veri/veri.csv** Claude Project'e **dosya** olarak yüklendi (Connector kurumsal politika nedeniyle kullanılmadı). Aynı CSV ayrıca Google Sheet'e aktarıldı (sayfa adı `veri`) — dashboard bunu canlı okuyacak.
 
 ## Kullanılacak Prompt (aynen) — Üretim
 ```
-Bağlı Google Sheet'teki "veri" sayfasını CANLI oku; veriyi koda gömme. Yüklü Üretim
+Project'e yüklü veri.csv'yi kullan; üretilen kodda veriyi GÖMME — Apps Script ile bağlı
+Google Sheet'ten çalışma anında oku. Yüklü Üretim
 Standardı'ndaki tasarım sistemine ve Kalıcı Talimat'taki kurallara birebir uyarak, S2
 Kalite & Iskarta panosunu Google Apps Script web app olarak üret. Dosyaları ayrı ver:
 Kod.gs (doGet + veriGetir Sheet'ten canlı + logoGetir), index (HTML iskelet), stil
@@ -31,13 +32,13 @@ Tablo. Para ₺ + tr-TR, etiketler Türkçe, boş/hata/yüklenme durumları dahi
 ---
 
 ## 1. Deneme — GERÇEK Transcript
-> Connector'ın **bağlı** olduğu ve Claude'un Sheet'i **canlı okuduğu** an ekran görüntüsünde görünmeli.
+> Claude'un yüklü `veri.csv`'yi kullandığı ve üretilen kodun Sheet'ten **canlı okuyacak** şekilde yazıldığı görünmeli.
 
 ```
 [BURAYA 1. ÜRETİMİN GERÇEK TRANSCRIPT'İNİ YAPIŞTIR]
 ```
 **Paylaşım linki:** _[...]_
-**Ekran görüntüleri:** ekran-goruntuleri/turB-uretim1.png · ekran-goruntuleri/connector-bagli.png
+**Ekran görüntüsü:** ekran-goruntuleri/turB-uretim1.png
 
 ---
 

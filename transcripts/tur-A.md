@@ -10,7 +10,7 @@
 > kanıtlayacağını gösterir.
 
 ## Ortam
-- claude.ai → **YENİ, boş bir sohbet** (Project'in **DIŞINDA**; hiçbir talimat/Skill/Connector yok).
+- claude.ai → **YENİ, boş bir sohbet** (Project'in **DIŞINDA**; hiçbir talimat/Skill/yüklü dosya yok).
 - Aynı promptu **2 kez** (iki ayrı boş sohbette) çalıştır.
 
 ## Kullanılacak Prompt (aynen)

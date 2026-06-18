@@ -3,7 +3,7 @@
 Bu kılavuz, repodaki dosyalarla ödevin **gerçek** kanıtlarını üretmen için adım adım
 yol gösterir. Her şey **tarayıcı tabanlıdır** (iş bilgisayarına kurulum gerekmez).
 
-İçindekiler: 0) Veri · 1) Project + Rule · 2) Skill · 3) Sheet + Connector ·
+İçindekiler: 0) Veri · 1) Project + Rule · 2) Skill · 3) Sheet + veri yükleme ·
 4) Tur A · 5) Tur B · 6) Apps Script deploy · 7) Google Sites (ops.) ·
 8) Doğrulama · 9) Bonus tetikleyici · 10) Rapor · 11) Teslim.
 
@@ -20,15 +20,22 @@ yol gösterir. Her şey **tarayıcı tabanlıdır** (iş bilgisayarına kurulum 
 4. 📸 **Ekran görüntüsü:** `ekran-goruntuleri/project-rule.png` (talimat alanında kuralların göründüğü hal).
 
 ## 2) Üretim Standardı (Skill / Project Bilgisi)
-1. Project → **Knowledge / Bilgi** (veya Skills) bölümüne `talimatlar/uretim-standardi.md` dosyasını yükle.
-2. 📸 `ekran-goruntuleri/project-skill.png`.
+1. Project sayfasında sağdaki **"Files" (Dosyalar)** kutusunun sağ üstündeki **`+`** işaretine tıkla
+   (veya kutunun ortasındaki "Add PDFs, documents, or other text…" alanına tıkla).
+2. Bilgisayarına indirdiğin `talimatlar/uretim-standardi.md` dosyasını seç → yükle. Dosya listede görünür.
+   - `.md` kabul edilmezse `.txt` olarak yeniden adlandır ya da içeriğini kopyalayıp yapıştır.
+   - Not: Bazı arayüzlerde bu bölüm "Knowledge / Bilgi" adıyla geçebilir; işlev aynıdır (proje bilgisi).
+3. 📸 `ekran-goruntuleri/project-skill.png`.
 
-## 3) Google Sheet + Connector (Canlı Veri)
-1. [sheets.new](https://sheets.new) → yeni Sheet → **Dosya > İçe aktar** → `veri/veri.csv` yükle
-   → "Mevcut sayfayı değiştir" / yeni sayfa. **Sayfa (sekme) adını `veri` yap.**
-2. Sheet'i adlandır (örn. `S2-Kalite-Veri`) ve kaydet.
-3. claude.ai → Project → **Connectors** → Google Drive/Sheets bağlayıcısını ekle ve bu Sheet'e erişim ver.
-4. 📸 `ekran-goruntuleri/connector-bagli.png` (bağlantının kurulu olduğu ekran).
+## 3) Google Sheet + Veriyi Claude'a yükle
+> Not: İş Workspace'i kurumsal politika nedeniyle Claude'a **Connector** ile bağlanmıyor; veriyi
+> Claude'a **dosya** olarak veriyoruz. Canlı veri ilkesi, dashboard'un (Apps Script) Sheet'i çalışma
+> anında okumasıyla korunur (bkz. §6 ve Doğrulama #5). Veri sentetik olduğundan bu tamamen uygundur.
+1. [sheets.new](https://sheets.new) → yeni Sheet → **Dosya > İçe aktar** → `veri/veri.csv` yükle.
+   **Sayfa (sekme) adını `veri` yap.** Sheet'i adlandır (örn. `S2-Kalite-Veri`) ve kaydet.
+   *(Bu Sheet, Apps Script panosunun canlı okuyacağı kaynaktır.)*
+2. claude.ai → Project → sağdaki **"Files"** kutusunun **`+`**'sına tıkla → `veri/veri.csv`'yi yükle.
+   (Claude bu örnek veriyle dashboard'u üretir; üretilen kod veriyi gömmez, Sheet'ten canlı okur.)
 
 ## 4) Tur A — Boş Sohbet (Kontrol)
 1. **Project DIŞINDA** yeni boş sohbet aç.
@@ -36,8 +43,9 @@ yol gösterir. Her şey **tarayıcı tabanlıdır** (iş bilgisayarına kurulum 
 3. Gerçek transcript'leri `transcripts/tur-A.md`'ye yapıştır; 📸 `turA-deneme1.png`, `turA-deneme2.png`.
 
 ## 5) Tur B — Project İçinde (Yönetişimli)
-1. **Project içinde** yeni sohbet aç (Rule + Skill + Connector aktif).
-2. `transcripts/tur-B.md` üretim promptunu çalıştır; Claude'un Sheet'i **canlı okuduğunu** gör.
+1. **Project içinde** yeni sohbet aç (Rule + Skill + yüklü `veri.csv` aktif).
+2. `transcripts/tur-B.md` üretim promptunu çalıştır; Claude'un yüklü veriden ürettiğini ve kodun
+   Sheet'ten **canlı okuyacak** biçimde yazıldığını gör.
 3. Kararlılık için aynı isteği **tekrar** çalıştır.
 4. Üretilen kodları (`Kod.gs`, `index`, `stil`, `script`) bir sonraki adımda Apps Script'e koyacaksın.
    > Not: Claude'un ürettiği kod, repodaki `dashboard/apps-script/` ile **eşdeğer** olmalı
@@ -96,6 +104,6 @@ klasörü olarak yükle (ödev yönergesine göre PR/branch).
 
 ### Ekran Görüntüsü Kontrol Listesi
 `ekran-goruntuleri/OKUBENI.md`'deki adlarla kaydet: project-rule, project-skill,
-connector-bagli, turA-deneme1/2, turB-uretim1/2, dashboard-genel/pareto/tablo,
+turA-deneme1/2, turB-uretim1/2, dashboard-genel/pareto/tablo,
 dogrulama-canli-once/sonra, dogrulama-bos-veri, tetikleyici-log, tetikleyici-eposta,
 (ops.) sites-embed.

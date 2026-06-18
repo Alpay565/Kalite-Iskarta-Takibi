@@ -58,12 +58,13 @@
   <line x1="365" y1="298" x2="430" y2="338" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
   <line x1="587" y1="298" x2="540" y2="338" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
 
-  <!-- Connector: Sheets -> Project -->
-  <path d="M460,166 C620,200 720,260 690,340" fill="none" stroke="#4E8A00" stroke-width="2" marker-end="url(#ok)"/>
-  <rect x="700" y="232" width="210" height="62" rx="10" fill="#fff" stroke="#4E8A00" stroke-width="2"/>
-  <text x="805" y="258" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Connector (canlı)</text>
-  <text x="805" y="277" text-anchor="middle" font-size="11" fill="#41524a">Claude ↔ Sheets · veriyi okur</text>
-  <line x1="700" y1="280" x2="660" y2="338" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
+  <!-- Veri dosyası: Sheets -> CSV -> Project (Connector kullanılmadı) -->
+  <path d="M460,166 C620,200 720,260 690,340" fill="none" stroke="#9AA3A0" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#okGri)"/>
+  <rect x="700" y="232" width="210" height="62" rx="10" fill="#fff" stroke="#9AA3A0" stroke-width="2"/>
+  <text x="805" y="254" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Veri: CSV dosyası</text>
+  <text x="805" y="271" text-anchor="middle" font-size="10" fill="#41524a">Project'e yüklenir</text>
+  <text x="805" y="285" text-anchor="middle" font-size="9" fill="#C62828">(Connector kurumsal politika nedeniyle kullanılmadı)</text>
+  <line x1="700" y1="280" x2="660" y2="338" stroke="#9AA3A0" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#okGri)"/>
 
   <!-- ============ İKİ TUR ============ -->
   <rect x="40" y="452" width="270" height="78" rx="10" fill="#fdeceb" stroke="#C62828" stroke-width="1.8" stroke-dasharray="6 4"/>
@@ -93,9 +94,9 @@
   <text x="797" y="601" text-anchor="middle" font-size="11" fill="#41524a">KPI · Trend · Pareto · Kritik Tablo</text>
   <line x1="797" y1="530" x2="797" y2="554" stroke="#4E8A00" stroke-width="2" marker-end="url(#ok)"/>
 
-  <!-- Apps Script canlı okuma: Sheets'e geri ok -->
-  <path d="M797,452 C797,360 560,150 512,166" fill="none" stroke="#9AA3A0" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#okGri)"/>
-  <text x="724" y="208" font-size="10" fill="#6b7a72" transform="rotate(-32 724 208)">canlı veri okuma</text>
+  <!-- Apps Script CANLI okuma: Sheets'e geri ok (gerçek canlı veri yolu) -->
+  <path d="M797,452 C797,360 560,150 512,166" fill="none" stroke="#4E8A00" stroke-width="2.4" marker-end="url(#ok)"/>
+  <text x="726" y="206" font-size="11" font-weight="700" fill="#4E8A00" transform="rotate(-32 726 206)">CANLI VERİ (Apps Script)</text>
 
   <!-- Bonus tetikleyici -->
   <rect x="40" y="556" width="320" height="62" rx="10" fill="#fff" stroke="#9AA3A0" stroke-width="1.5" stroke-dasharray="4 3"/>

@@ -6,14 +6,14 @@ Bunlar rubrik kanıtlarıdır; gerçek olmalıdır.
 ## Kurulum / Yönetişim
 - `project-rule.png` — Project talimat alanında kalıcı talimatın (Rule) göründüğü ekran.
 - `project-skill.png` — Üretim standardının Skill/bilgi olarak yüklü olduğu ekran.
-- `connector-bagli.png` — Google Sheets Connector'ın Project'e bağlı olduğu ekran.
+- `files-veri.png` — (ops.) `veri.csv`'nin Project "Files"a yüklendiği ekran. *(Connector kurumsal politika nedeniyle kullanılmadı.)*
 
 ## Tur A (boş sohbet — kontrol)
 - `turA-deneme1.png`
 - `turA-deneme2.png`
 
 ## Tur B (Project + canlı veri)
-- `turB-uretim1.png` — üretim + Sheet'in canlı okunduğu an.
+- `turB-uretim1.png` — üretim (yüklü veriden) anı.
 - `turB-uretim2.png` — kararlılık (ikinci üretim).
 
 ## Dashboard (deploy edilmiş web app)

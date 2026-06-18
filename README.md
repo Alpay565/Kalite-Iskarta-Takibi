@@ -11,7 +11,7 @@ AdAstra × VALEO Kurumsal YZ Programı — **Ödev #1**
 | **Departman** | Ar-Ge / Kalite |
 | **Senaryo** | S2 — Kalite & Iskarta Takibi |
 | **Persona** | Kalite Mühendisi |
-| **Kullanılan Araç** | **Claude (Pro/Max)** — Project + Skill + Connector |
+| **Kullanılan Araç** | **Claude (Pro/Max)** — Project + Skill + dosya yükleme (Connector kurumsal politika nedeniyle kullanılmadı) |
 | **Çalışma Ortamı** | Google Apps Script web app (canlı Google Sheets) |
 
 > **Bu ödevin özü dashboard çizmek değil**, aynı dashboard'u her seferinde **aynı
@@ -40,7 +40,7 @@ ekran-goruntuleri/ OKUBENI.md (hangi görüntü hangi adla)
 ## Nasıl Çalıştırılır (özet)
 Tam adımlar: **`docs/kurulum-kilavuzu.md`**. Kısaca:
 1. Project oluştur → `kalici-talimat.md`'yi talimata yapıştır, `uretim-standardi.md`'yi Skill/bilgi yükle.
-2. `veri/veri.csv`'yi Google Sheet'e aktar (sayfa adı `veri`) → **Connector** ile bağla.
+2. `veri/veri.csv`'yi hem Google Sheet'e aktar (sayfa adı `veri` — Apps Script için) hem Claude Project'e **dosya** olarak yükle (Connector kullanılmadı).
 3. **Tur A** (boş sohbet) ve **Tur B** (Project + canlı Sheet) turlarını çalıştır.
 4. Sheet → **Uzantılar > Apps Script** → `dashboard/apps-script/` dosyalarını koy → **Deploy > Web app**.
 5. 6 doğrulama senaryosu + ekran görüntüleri + rapor.
@@ -71,7 +71,7 @@ Toplam Iskarta = Σ Iskarta Maliyeti.
 |---|---|
 | Bağlam + Rule | `talimatlar/kalici-talimat.md` · 📸 project-rule.png |
 | Skill / Üretim standardı | `talimatlar/uretim-standardi.md` · 📸 project-skill.png |
-| Canlı veri (Connector) | 📸 connector-bagli.png · Tur B transcript · Doğrulama #5 |
+| Canlı veri (Apps Script runtime) | Doğrulama #5 (Sheet değiştir → web app yenile) · 📸 dogrulama-canli-once/sonra.png · Not: Connector politika nedeniyle yok |
 | Context yönetimi | rapor.pdf §3 |
 | İki tur (A/B) | `transcripts/tur-A.md`, `tur-B.md` + 📸 |
 | Dashboard | `dashboard/apps-script/` · Web app URL: _[buraya]_ · 📸 dashboard-*.png |

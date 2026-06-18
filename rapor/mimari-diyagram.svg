@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" width="960" height="660" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Yönetişimli dashboard üretim hattı mimarisi">
+  <title>S2 Kalite &amp; Iskarta — Yönetişimli Üretim Hattı Mimarisi</title>
+  <defs>
+    <marker id="ok" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#4E8A00"/>
+    </marker>
+    <marker id="okGri" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#6b7a72"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="660" fill="#F6F9F4"/>
+  <text x="480" y="34" text-anchor="middle" font-size="22" font-weight="800" fill="#1F3A0E">
+    S2 Kalite &amp; Iskarta — Yönetişimli Dashboard Üretim Hattı
+  </text>
+  <text x="480" y="56" text-anchor="middle" font-size="13" fill="#41524a">
+    Amaç: dashboard çizmek değil; aynı dashboard'u her seferinde aynı standartta üreten yönetişim katmanı
+  </text>
+
+  <!-- ============ KATMAN 1: VERİ ============ -->
+  <text x="40" y="96" font-size="12" font-weight="700" fill="#4E8A00">① VERİ KAYNAĞI</text>
+  <rect x="40" y="104" width="210" height="62" rx="10" fill="#fff" stroke="#9AA3A0" stroke-width="1.5"/>
+  <text x="145" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Sentetik Veri</text>
+  <text x="145" y="149" text-anchor="middle" font-size="11" fill="#41524a">uret_veri.py · seed sabit · ~250 satır</text>
+
+  <rect x="300" y="104" width="210" height="62" rx="10" fill="#fff" stroke="#4E8A00" stroke-width="2"/>
+  <text x="405" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Google Sheets — "veri"</text>
+  <text x="405" y="149" text-anchor="middle" font-size="11" fill="#41524a">tek canlı kaynak (single source)</text>
+
+  <line x1="250" y1="135" x2="298" y2="135" stroke="#4E8A00" stroke-width="2" marker-end="url(#ok)"/>
+
+  <!-- ============ KATMAN 2: YÖNETİŞİM + ÜRETİM ============ -->
+  <text x="40" y="210" font-size="12" font-weight="700" fill="#4E8A00">② YÖNETİŞİM KATMANI → ÜRETİM</text>
+
+  <!-- üç girdi kutusu -->
+  <rect x="40" y="224" width="206" height="74" rx="10" fill="#eef6e3" stroke="#4E8A00" stroke-width="1.5"/>
+  <text x="143" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Kalıcı Talimat (Rule)</text>
+  <text x="143" y="268" text-anchor="middle" font-size="11" fill="#41524a">≥6 makine-denetlenebilir</text>
+  <text x="143" y="283" text-anchor="middle" font-size="11" fill="#41524a">kural · ₺/dil/erişilebilirlik</text>
+
+  <rect x="262" y="224" width="206" height="74" rx="10" fill="#eef6e3" stroke="#4E8A00" stroke-width="1.5"/>
+  <text x="365" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Üretim Standardı (Skill)</text>
+  <text x="365" y="268" text-anchor="middle" font-size="11" fill="#41524a">tasarım sistemi · ekran</text>
+  <text x="365" y="283" text-anchor="middle" font-size="11" fill="#41524a">anatomisi · grafik seçimi</text>
+
+  <rect x="484" y="224" width="206" height="74" rx="10" fill="#eef6e3" stroke="#4E8A00" stroke-width="1.5"/>
+  <text x="587" y="249" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Bağlam (Context)</text>
+  <text x="587" y="268" text-anchor="middle" font-size="11" fill="#41524a">veriyi gömme, bağlı oku ·</text>
+  <text x="587" y="283" text-anchor="middle" font-size="11" fill="#41524a">bütçe notu</text>
+
+  <!-- Claude Project kutusu -->
+  <rect x="262" y="340" width="428" height="70" rx="12" fill="#1F3A0E"/>
+  <text x="476" y="372" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Claude Project (Pro/Max)</text>
+  <text x="476" y="393" text-anchor="middle" font-size="11" fill="#cfe8b8">Rule + Skill + Context kalıcı uygulanır</text>
+
+  <!-- girdilerden Project'e oklar -->
+  <line x1="143" y1="298" x2="320" y2="338" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
+  <line x1="365" y1="298" x2="430" y2="338" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
+  <line x1="587" y1="298" x2="540" y2="338" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
+
+  <!-- Connector: Sheets -> Project -->
+  <path d="M460,166 C620,200 720,260 690,340" fill="none" stroke="#4E8A00" stroke-width="2" marker-end="url(#ok)"/>
+  <rect x="700" y="232" width="210" height="62" rx="10" fill="#fff" stroke="#4E8A00" stroke-width="2"/>
+  <text x="805" y="258" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Connector (canlı)</text>
+  <text x="805" y="277" text-anchor="middle" font-size="11" fill="#41524a">Claude ↔ Sheets · veriyi okur</text>
+  <line x1="700" y1="280" x2="660" y2="338" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
+
+  <!-- ============ İKİ TUR ============ -->
+  <rect x="40" y="452" width="270" height="78" rx="10" fill="#fdeceb" stroke="#C62828" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="175" y="478" text-anchor="middle" font-size="13" font-weight="700" fill="#C62828">TUR A — Boş Sohbet</text>
+  <text x="175" y="498" text-anchor="middle" font-size="11" fill="#41524a">standart YOK → her sefer farklı</text>
+  <text x="175" y="514" text-anchor="middle" font-size="11" fill="#41524a">(kontrol grubu · sapma görünür)</text>
+
+  <rect x="360" y="452" width="270" height="78" rx="10" fill="#eef6e3" stroke="#4E8A00" stroke-width="2"/>
+  <text x="495" y="478" text-anchor="middle" font-size="13" font-weight="700" fill="#2E7D32">TUR B — Project İçinde</text>
+  <text x="495" y="498" text-anchor="middle" font-size="11" fill="#41524a">standart VAR → tekrar üretilebilir</text>
+  <text x="495" y="514" text-anchor="middle" font-size="11" fill="#41524a">(2 kez → kararlı çıktı)</text>
+
+  <line x1="430" y1="410" x2="240" y2="450" stroke="#6b7a72" stroke-width="1.6" marker-end="url(#okGri)"/>
+  <line x1="520" y1="410" x2="495" y2="450" stroke="#4E8A00" stroke-width="1.8" marker-end="url(#ok)"/>
+
+  <!-- ============ KATMAN 3: ÇIKTI ============ -->
+  <text x="680" y="438" font-size="12" font-weight="700" fill="#4E8A00">③ ÇALIŞAN ÇIKTI</text>
+  <rect x="680" y="452" width="234" height="78" rx="10" fill="#fff" stroke="#4E8A00" stroke-width="2"/>
+  <text x="797" y="478" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Apps Script Web App</text>
+  <text x="797" y="497" text-anchor="middle" font-size="11" fill="#41524a">HtmlService + SpreadsheetApp</text>
+  <text x="797" y="513" text-anchor="middle" font-size="11" fill="#41524a">veriyi Sheet'ten CANLI okur</text>
+
+  <line x1="630" y1="491" x2="678" y2="491" stroke="#4E8A00" stroke-width="2" marker-end="url(#ok)"/>
+
+  <rect x="680" y="556" width="234" height="62" rx="10" fill="#eef6e3" stroke="#4E8A00" stroke-width="1.5"/>
+  <text x="797" y="582" text-anchor="middle" font-size="13" font-weight="700" fill="#16261C">Dashboard — 4 Ekran</text>
+  <text x="797" y="601" text-anchor="middle" font-size="11" fill="#41524a">KPI · Trend · Pareto · Kritik Tablo</text>
+  <line x1="797" y1="530" x2="797" y2="554" stroke="#4E8A00" stroke-width="2" marker-end="url(#ok)"/>
+
+  <!-- Apps Script canlı okuma: Sheets'e geri ok -->
+  <path d="M797,452 C797,360 560,150 512,166" fill="none" stroke="#9AA3A0" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#okGri)"/>
+  <text x="724" y="208" font-size="10" fill="#6b7a72" transform="rotate(-32 724 208)">canlı veri okuma</text>
+
+  <!-- Bonus tetikleyici -->
+  <rect x="40" y="556" width="320" height="62" rx="10" fill="#fff" stroke="#9AA3A0" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="200" y="582" text-anchor="middle" font-size="12" font-weight="700" fill="#16261C">(Bonus) Zaman Tetikleyici</text>
+  <text x="200" y="601" text-anchor="middle" font-size="11" fill="#41524a">gunlukKaliteOzeti() → günlük PPM e-postası + uyarı</text>
+
+  <!-- QA notu -->
+  <text x="40" y="642" font-size="11" fill="#6b7a72">Yönetişim QA: otomasyon/kural-denetimi.py → satır içi stil/script + gömülü veri + tek tasarım sistemi denetimi (8/8 PASS)</text>
+</svg>

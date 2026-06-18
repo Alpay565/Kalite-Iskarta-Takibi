@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Stil tek tasarım sistemi dosyasından gelir (kural #4). Satır içi stil yok. -->
+  <?!= include('stil'); ?>
+</head>
+<body>
+  <div class="uygulama">
+    <header class="ust-serit">
+      <div class="marka">
+        <span class="logo-kutu"><img id="logo" alt="VALEO"></span>
+        <div class="marka-yazi">
+          <div class="baslik">Kalite &amp; Iskarta Kontrol Paneli</div>
+          <div class="alt-baslik">S2 · Kalite Mühendisi Panosu</div>
+        </div>
+      </div>
+      <div class="guncelleme" id="guncelleme">Son güncelleme: —</div>
+    </header>
+
+    <nav class="sekmeler" role="tablist" aria-label="Pano sekmeleri">
+      <button class="sekme aktif" data-ekran="e1" role="tab" aria-selected="true" type="button">Genel Bakış</button>
+      <button class="sekme" data-ekran="e2" role="tab" aria-selected="false" type="button">Trend</button>
+      <button class="sekme" data-ekran="e3" role="tab" aria-selected="false" type="button">Pareto</button>
+      <button class="sekme" data-ekran="e4" role="tab" aria-selected="false" type="button">Kritik Tablo</button>
+    </nav>
+
+    <div class="filtre-cubugu">
+      <label for="filtreHat">Hat filtresi:</label>
+      <select id="filtreHat"><option value="Hepsi">Tüm Hatlar</option></select>
+      <span id="kayitBilgi"></span>
+    </div>
+
+    <main id="icerik"></main>
+  </div>
+
+  <!-- İstemci mantığı tek script dosyasından gelir (kural #4). Satır içi mantık yok. -->
+  <?!= include('script'); ?>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!-- OTOMATIK URETILDI: dashboard/derle_appsscript.py — bu dosyayi ELLE DUZENLEMEYIN; kaynak/ icindeki dosyalari duzenleyip betigi yeniden calistirin. -->
+<script>
+'use strict';
+/*
+ * VERİ KATMANI — tek giriş noktası.
+ * Görünüm katmanı veriyi NASIL geldiğini bilmez; yalnız tüketir.
+ *  - Apps Script ortamı  : google.script.run -> sunucudaki veriGetir() (Sheet'ten canlı)
+ *  - Yerel önizleme       : veri.json fetch
+ * Kodda GÖMÜLÜ VERİ YOKTUR.
+ */
+
+/* Sütun adları tek kaynak (Sheet başlıklarıyla birebir aynı olmalı). */
+var SUTUN = {
+  tarih: 'Tarih',
+  parca: 'Parça No',
+  hat: 'Hat',
+  hataTipi: 'Hata Tipi',
+  hataAdedi: 'Hata Adedi',
+  uretimAdedi: 'Üretim Adedi',
+  maliyet: 'Iskarta Maliyeti',
+  asama: 'Tespit Aşaması'
+};
+
+var AY_ADI = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz',
+              'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
+
+/* ----------------------------------------------------------------- yükleme */
+function veriYukle() {
+  if (typeof google !== 'undefined' && google.script && google.script.run) {
+    return new Promise(function (coz, ret) {
+      google.script.run
+        .withSuccessHandler(coz)
+        .withFailureHandler(function (e) {
+          ret(new Error(e && e.message ? e.message : 'Sunucu verisi okunamadı'));
+        })
+        .veriGetir();
+    });
+  }
+  var yol = (typeof window !== 'undefined' && window.YEREL_VERI_YOLU) ||
+    (typeof document !== 'undefined' && document.body && document.body.getAttribute('data-veri')) ||
+    '../veri/veri.json';
+  return fetch(yol).then(function (y) {
+    if (!y.ok) throw new Error('Veri yüklenemedi (HTTP ' + y.status + ')');
+    return y.json();
+  });
+}
+
+/* ------------------------------------------------------------ biçimlendirme */
+function sayisal(v) { var n = Number(v); return isNaN(n) ? 0 : n; }
+
+function sayiBicim(n) {
+  return new Intl.NumberFormat('tr-TR').format(Math.round(sayisal(n)));
+}
+function paraBicim(n) { return sayiBicim(n) + ' ₺'; }
+function yuzdeBicim(n, basamak) {
+  basamak = (basamak == null) ? 0 : basamak;
+  return new Intl.NumberFormat('tr-TR', {
+    minimumFractionDigits: basamak, maximumFractionDigits: basamak
+  }).format(sayisal(n)) + '%';
+}
+
+/* Tarih: Sheet Date veya 'YYYY-MM-DD' gelebilir -> normalize et. */
+function isoTarih(d) {
+  if (d instanceof Date && !isNaN(d)) {
+    return d.getFullYear() + '-' +
+      String(d.getMonth() + 1).padStart(2, '0') + '-' +
+      String(d.getDate()).padStart(2, '0');
+  }
+  return String(d == null ? '' : d).slice(0, 10);
+}
+function tarihBicim(d) {
+  var p = isoTarih(d).split('-');
+  return p.length === 3 ? (p[2] + '.' + p[1] + '.' + p[0]) : isoTarih(d);
+}
+function ayAnahtari(d) { return isoTarih(d).slice(0, 7); } // YYYY-MM
+
+/* --------------------------------------------------------------- dönüşümler */
+function metrikler(satirlar) {
+  var tu = 0, th = 0, tm = 0, hataAdet = {};
+  satirlar.forEach(function (r) {
+    tu += sayisal(r[SUTUN.uretimAdedi]);
+    th += sayisal(r[SUTUN.hataAdedi]);
+    tm += sayisal(r[SUTUN.maliyet]);
+    var t = r[SUTUN.hataTipi];
+    if (t) hataAdet[t] = (hataAdet[t] || 0) + sayisal(r[SUTUN.hataAdedi]);
+  });
+  var enSik = Object.keys(hataAdet).sort(function (a, b) {
+    return hataAdet[b] - hataAdet[a];
+  })[0] || '—';
+  return {
+    toplamUretim: tu,
+    toplamHata: th,
+    toplamMaliyet: tm,
+    ppm: tu ? Math.round(th / tu * 1e6) : 0,
+    fpy: tu ? (1 - th / tu) * 100 : 0,
+    enSikHata: enSik
+  };
+}
+
+/* Veriyi tarih ortasından ikiye böler: önceki / mevcut dönem. */
+function donemAyir(satirlar) {
+  var sirali = satirlar.slice().sort(function (a, b) {
+    var x = isoTarih(a[SUTUN.tarih]), y = isoTarih(b[SUTUN.tarih]);
+    return x < y ? -1 : (x > y ? 1 : 0);
+  });
+  var orta = Math.floor(sirali.length / 2);
+  return { onceki: sirali.slice(0, orta), mevcut: sirali.slice(orta) };
+}
+
+/* Aylık seri: [{ay, etiket, uretim, hata, maliyet, ppm}] (kronolojik). */
+function aylikSeri(satirlar) {
+  var harita = {};
+  satirlar.forEach(function (r) {
+    var ay = ayAnahtari(r[SUTUN.tarih]); if (!ay) return;
+    if (!harita[ay]) harita[ay] = { ay: ay, uretim: 0, hata: 0, maliyet: 0 };
+    harita[ay].uretim += sayisal(r[SUTUN.uretimAdedi]);
+    harita[ay].hata += sayisal(r[SUTUN.hataAdedi]);
+    harita[ay].maliyet += sayisal(r[SUTUN.maliyet]);
+  });
+  return Object.keys(harita).sort().map(function (k) {
+    var o = harita[k];
+    o.ppm = o.uretim ? Math.round(o.hata / o.uretim * 1e6) : 0;
+    o.etiket = AY_ADI[parseInt(k.slice(5, 7), 10) - 1] || k;
+    return o;
+  });
+}
+
+/* Pareto: {dizi:[{ad, adet, kumulatif%}], toplam}. */
+function paretoHesap(satirlar) {
+  var harita = {};
+  satirlar.forEach(function (r) {
+    var t = r[SUTUN.hataTipi]; if (!t) return;
+    harita[t] = (harita[t] || 0) + sayisal(r[SUTUN.hataAdedi]);
+  });
+  var dizi = Object.keys(harita).map(function (k) {
+    return { ad: k, adet: harita[k] };
+  }).sort(function (a, b) { return b.adet - a.adet; });
+  var toplam = dizi.reduce(function (s, x) { return s + x.adet; }, 0);
+  var kum = 0;
+  dizi.forEach(function (x) { kum += x.adet; x.kumulatif = toplam ? kum / toplam * 100 : 0; });
+  return { dizi: dizi, toplam: toplam };
+}
+
+/* Hat bazında hata adedi: [{ad, adet}]. */
+function hatBazli(satirlar) {
+  var harita = {};
+  satirlar.forEach(function (r) {
+    var h = r[SUTUN.hat]; if (!h) return;
+    harita[h] = (harita[h] || 0) + sayisal(r[SUTUN.hataAdedi]);
+  });
+  return Object.keys(harita).sort().map(function (k) { return { ad: k, adet: harita[k] }; });
+}
+
+/* Benzersiz hat listesi (filtre için). */
+function hatlar(satirlar) {
+  var k = {};
+  satirlar.forEach(function (r) { if (r[SUTUN.hat]) k[r[SUTUN.hat]] = 1; });
+  return Object.keys(k).sort();
+}
+
+/* p. yüzdelik (0-100) — eşik hesabı için. */
+function yuzdelik(degerler, p) {
+  if (!degerler.length) return 0;
+  var s = degerler.slice().sort(function (a, b) { return a - b; });
+  var i = Math.min(s.length - 1, Math.floor(p / 100 * s.length));
+  return s[i];
+}
+
+/* Kritik kayıtlar: maliyete göre azalan ilk n; her birine Durum etiketi. */
+function kritikKayitlar(satirlar, n) {
+  var maliyetler = satirlar.map(function (r) { return sayisal(r[SUTUN.maliyet]); });
+  var esikKritik = yuzdelik(maliyetler, 75);
+  var esikIzle = yuzdelik(maliyetler, 50);
+  return satirlar.slice()
+    .sort(function (a, b) { return sayisal(b[SUTUN.maliyet]) - sayisal(a[SUTUN.maliyet]); })
+    .slice(0, n || 12)
+    .map(function (r) {
+      var m = sayisal(r[SUTUN.maliyet]);
+      var durum = (m >= esikKritik)
+        ? { ad: 'Kritik', ikon: '⚠', sinif: 'tehlike' }
+        : (m >= esikIzle)
+          ? { ad: 'İzle', ikon: '●', sinif: 'uyari' }
+          : { ad: 'Normal', ikon: '✓', sinif: 'basari' };
+      return { satir: r, durum: durum };
+    });
+}
+
+'use strict';
+/*
+ * GRAFİKLER — saf SVG üretimi (dış kütüphane/CDN yok).
+ * Her fonksiyon bir SVG dizesi döndürür; renkler CSS değişkenlerinden okunur.
+ * Erişilebilirlik: role="img" + <title>/<desc> + lejant (renk tek sinyal değil).
+ */
+
+var GRAFIK_W = 760, GRAFIK_H = 340;
+var KENAR = { sol: 60, sag: 60, ust: 20, alt: 64 };
+
+function kacis(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+  });
+}
+
+function tema(ad, varsayilan) {
+  try {
+    var v = getComputedStyle(document.documentElement).getPropertyValue(ad).trim();
+    return v || varsayilan;
+  } catch (e) { return varsayilan; }
+}
+
+function guzelTavan(m) {
+  if (m <= 0) return 1;
+  var us = Math.pow(10, Math.floor(Math.log10(m)));
+  var n = m / us;
+  var k = n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10;
+  return k * us;
+}
+
+function cizimAlani() {
+  return {
+    x0: KENAR.sol, x1: GRAFIK_W - KENAR.sag,
+    y0: KENAR.ust, y1: GRAFIK_H - KENAR.alt
+  };
+}
+
+/* y ekseni: 4 aralık ızgara + etiketler. */
+function eksenY(a, maxDeger, bicim, sagEksen, sagMax, sagBicim) {
+  var renkIzgara = tema('--gri-200', '#E4E9E5');
+  var renkMetin = tema('--murekkep', '#16261C');
+  var s = '';
+  var adim = 4;
+  for (var i = 0; i <= adim; i++) {
+    var y = a.y1 - (i / adim) * (a.y1 - a.y0);
+    var deger = (maxDeger * i) / adim;
+    s += '<line x1="' + a.x0 + '" y1="' + y + '" x2="' + a.x1 + '" y2="' + y +
+         '" stroke="' + renkIzgara + '" stroke-width="1"/>';
+    s += '<text x="' + (a.x0 - 8) + '" y="' + (y + 4) + '" text-anchor="end" ' +
+         'font-size="11" fill="' + renkMetin + '">' + kacis(bicim ? bicim(deger) : Math.round(deger)) + '</text>';
+    if (sagEksen) {
+      var sd = (sagMax * i) / adim;
+      s += '<text x="' + (a.x1 + 8) + '" y="' + (y + 4) + '" text-anchor="start" ' +
+           'font-size="11" fill="' + renkMetin + '">' + kacis(sagBicim ? sagBicim(sd) : Math.round(sd)) + '</text>';
+    }
+  }
+  return s;
+}
+
+function xEtiketleri(a, etiketler, dondur) {
+  var renkMetin = tema('--murekkep', '#16261C');
+  var n = etiketler.length, s = '';
+  for (var i = 0; i < n; i++) {
+    var x = a.x0 + (n === 1 ? (a.x1 - a.x0) / 2 : (i + 0.5) * (a.x1 - a.x0) / n);
+    if (dondur) {
+      s += '<text x="' + x + '" y="' + (a.y1 + 16) + '" text-anchor="end" font-size="11" ' +
+           'fill="' + renkMetin + '" transform="rotate(-25 ' + x + ' ' + (a.y1 + 16) + ')">' +
+           kacis(etiketler[i]) + '</text>';
+    } else {
+      s += '<text x="' + x + '" y="' + (a.y1 + 18) + '" text-anchor="middle" font-size="11" ' +
+           'fill="' + renkMetin + '">' + kacis(etiketler[i]) + '</text>';
+    }
+  }
+  return s;
+}
+
+function lejant(ogeler) {
+  // ogeler: [{ad, renk, kesik}]
+  var renkMetin = tema('--murekkep', '#16261C');
+  var x = KENAR.sol, parcalar = [];
+  ogeler.forEach(function (o) {
+    var cizgi = o.kesik
+      ? '<line x1="' + x + '" y1="10" x2="' + (x + 18) + '" y2="10" stroke="' + o.renk +
+        '" stroke-width="3" stroke-dasharray="4 3"/>'
+      : '<rect x="' + x + '" y="4" width="18" height="12" rx="2" fill="' + o.renk + '"/>';
+    parcalar.push(cizgi +
+      '<text x="' + (x + 24) + '" y="14" font-size="12" fill="' + renkMetin + '">' + kacis(o.ad) + '</text>');
+    x += 24 + 8 + (String(o.ad).length * 7) + 18;
+  });
+  return '<g>' + parcalar.join('') + '</g>';
+}
+
+function svgSar(ic, baslik, lej) {
+  return '<svg viewBox="0 0 ' + GRAFIK_W + ' ' + (GRAFIK_H + 22) + '" width="100%" ' +
+    'preserveAspectRatio="xMidYMid meet" role="img" aria-label="' + kacis(baslik) + '">' +
+    '<title>' + kacis(baslik) + '</title>' +
+    (lej ? '<g transform="translate(0,0)">' + lej + '</g>' : '') +
+    '<g transform="translate(0,' + (lej ? 22 : 0) + ')">' + ic + '</g>' +
+    '</svg>';
+}
+
+/* --------------------------------------------------------------- çizgi grafik */
+/* opts: { seriler:[{ad,renk,kesik?,deger:[...]}], etiketler:[...], yBicim, baslik,
+ *         referans?:{deger, ad, renk} } */
+function cizgiGrafik(opts) {
+  var a = cizimAlani();
+  var tumDeger = [];
+  opts.seriler.forEach(function (s) { tumDeger = tumDeger.concat(s.deger); });
+  if (opts.referans) tumDeger.push(opts.referans.deger);
+  var max = guzelTavan(Math.max.apply(null, tumDeger.concat([1])));
+  var n = opts.etiketler.length;
+  function px(i) { return a.x0 + (n === 1 ? (a.x1 - a.x0) / 2 : i * (a.x1 - a.x0) / (n - 1)); }
+  function py(v) { return a.y1 - (v / max) * (a.y1 - a.y0); }
+
+  var ic = eksenY(a, max, opts.yBicim) + xEtiketleri(a, opts.etiketler, false);
+
+  if (opts.referans) {
+    var yr = py(opts.referans.deger);
+    ic += '<line x1="' + a.x0 + '" y1="' + yr + '" x2="' + a.x1 + '" y2="' + yr +
+      '" stroke="' + opts.referans.renk + '" stroke-width="2" stroke-dasharray="6 4"/>';
+  }
+
+  opts.seriler.forEach(function (s) {
+    var d = s.deger.map(function (v, i) { return (i ? 'L' : 'M') + px(i) + ' ' + py(v); }).join(' ');
+    ic += '<path d="' + d + '" fill="none" stroke="' + s.renk + '" stroke-width="3" ' +
+      (s.kesik ? 'stroke-dasharray="5 4" ' : '') + 'stroke-linejoin="round"/>';
+    s.deger.forEach(function (v, i) {
+      ic += '<circle cx="' + px(i) + '" cy="' + py(v) + '" r="3.5" fill="' + s.renk + '"/>';
+    });
+  });
+
+  var lej = lejant(opts.seriler.map(function (s) { return { ad: s.ad, renk: s.renk, kesik: s.kesik }; })
+    .concat(opts.referans ? [{ ad: opts.referans.ad, renk: opts.referans.renk, kesik: true }] : []));
+  return svgSar(ic, opts.baslik, lej);
+}
+
+/* --------------------------------------------------------------- sütun grafik */
+/* opts: { kategoriler:[...], degerler:[...], renk, yBicim, baslik, vurguSon? } */
+function sutunGrafik(opts) {
+  var a = cizimAlani();
+  var max = guzelTavan(Math.max.apply(null, opts.degerler.concat([1])));
+  var n = opts.degerler.length;
+  var bandGen = (a.x1 - a.x0) / n;
+  var sutunGen = bandGen * 0.6;
+  var renk = opts.renk || tema('--valeo-yesil-koyu', '#4E8A00');
+  var renkVurgu = tema('--valeo-yesil', '#82E600');
+  function py(v) { return a.y1 - (v / max) * (a.y1 - a.y0); }
+
+  var ic = eksenY(a, max, opts.yBicim) + xEtiketleri(a, opts.kategoriler, true);
+  opts.degerler.forEach(function (v, i) {
+    var x = a.x0 + i * bandGen + (bandGen - sutunGen) / 2;
+    var y = py(v);
+    var dolgu = (opts.vurguSon && i === n - 1) ? renkVurgu : renk;
+    ic += '<rect x="' + x + '" y="' + y + '" width="' + sutunGen + '" height="' + (a.y1 - y) +
+      '" rx="3" fill="' + dolgu + '"><title>' + kacis(opts.kategoriler[i] + ': ' +
+      (opts.yBicim ? opts.yBicim(v) : v)) + '</title></rect>';
+  });
+  return svgSar(ic, opts.baslik, null);
+}
+
+/* --------------------------------------------------------------- Pareto grafik */
+/* opts: { dizi:[{ad,adet,kumulatif}], yBicim, baslik, esik? } */
+function paretoGrafik(opts) {
+  var a = cizimAlani();
+  var adetler = opts.dizi.map(function (x) { return x.adet; });
+  var max = guzelTavan(Math.max.apply(null, adetler.concat([1])));
+  var n = opts.dizi.length;
+  var bandGen = (a.x1 - a.x0) / n;
+  var sutunGen = bandGen * 0.6;
+  var renkSutun = tema('--valeo-yesil-koyu', '#4E8A00');
+  var renkCizgi = tema('--murekkep', '#16261C');
+  var renkEsik = tema('--tehlike', '#C62828');
+  var esik = opts.esik || 80;
+  function py(v) { return a.y1 - (v / max) * (a.y1 - a.y0); }
+  function pyYuzde(p) { return a.y1 - (p / 100) * (a.y1 - a.y0); }
+  function px(i) { return a.x0 + (i + 0.5) * bandGen; }
+
+  var ic = eksenY(a, max, opts.yBicim, true, 100, function (p) { return Math.round(p) + '%'; });
+  ic += xEtiketleri(a, opts.dizi.map(function (x) { return x.ad; }), true);
+
+  // sütunlar
+  opts.dizi.forEach(function (x, i) {
+    var px0 = a.x0 + i * bandGen + (bandGen - sutunGen) / 2;
+    var y = py(x.adet);
+    ic += '<rect x="' + px0 + '" y="' + y + '" width="' + sutunGen + '" height="' + (a.y1 - y) +
+      '" rx="3" fill="' + renkSutun + '"><title>' + kacis(x.ad + ': ' + x.adet + ' adet') +
+      '</title></rect>';
+  });
+
+  // %80 eşik çizgisi
+  var ye = pyYuzde(esik);
+  ic += '<line x1="' + a.x0 + '" y1="' + ye + '" x2="' + a.x1 + '" y2="' + ye +
+    '" stroke="' + renkEsik + '" stroke-width="1.5" stroke-dasharray="6 4"/>';
+  ic += '<text x="' + (a.x1) + '" y="' + (ye - 5) + '" text-anchor="end" font-size="11" fill="' +
+    renkEsik + '">%' + esik + ' eşiği</text>';
+
+  // kümülatif % çizgisi
+  var d = opts.dizi.map(function (x, i) {
+    return (i ? 'L' : 'M') + px(i) + ' ' + pyYuzde(x.kumulatif);
+  }).join(' ');
+  ic += '<path d="' + d + '" fill="none" stroke="' + renkCizgi + '" stroke-width="2.5" stroke-linejoin="round"/>';
+  opts.dizi.forEach(function (x, i) {
+    ic += '<circle cx="' + px(i) + '" cy="' + pyYuzde(x.kumulatif) + '" r="3.5" fill="' + renkCizgi + '">' +
+      '<title>' + kacis('Kümülatif: ' + Math.round(x.kumulatif) + '%') + '</title></circle>';
+  });
+
+  var lej = lejant([
+    { ad: 'Hata adedi', renk: renkSutun },
+    { ad: 'Kümülatif %', renk: renkCizgi },
+    { ad: '%' + esik + ' eşiği', renk: renkEsik, kesik: true }
+  ]);
+  return svgSar(ic, opts.baslik, lej);
+}
+
+'use strict';
+/*
+ * UYGULAMA — orkestrasyon ve ekran render'ı.
+ * Durumlar: yükleniyor / boş / hata her bölümde ele alınır.
+ * Satır içi style/onclick KULLANILMAZ (kural #4); olaylar delegasyonla bağlanır.
+ */
+
+var Durum = {
+  veri: null, hata: null, yukleniyor: true,
+  aktifEkran: 'e1', filtreHat: 'Hepsi'
+};
+
+document.addEventListener('DOMContentLoaded', baslat);
+
+function baslat() {
+  sekmeleriKur();
+  logoYukle();
+  guncellemeZamani();
+
+  var icerik = document.getElementById('icerik');
+  if (icerik) {
+    icerik.addEventListener('click', function (e) {
+      if (e.target.closest('[data-aksiyon="yenile"]')) yenidenYukle();
+    });
+  }
+  var filtre = document.getElementById('filtreHat');
+  if (filtre) {
+    filtre.addEventListener('change', function () {
+      Durum.filtreHat = filtre.value; ciz();
+    });
+  }
+  yenidenYukle();
+}
+
+/* ------------------------------------------------------------------- yükleme */
+function yenidenYukle() {
+  Durum.yukleniyor = true; Durum.hata = null;
+  ciz();
+  veriYukle().then(function (satirlar) {
+    Durum.veri = Array.isArray(satirlar) ? satirlar : [];
+    Durum.yukleniyor = false;
+    filtreSecenekleriDoldur();
+    ciz();
+  }).catch(function (e) {
+    Durum.hata = (e && e.message) ? e.message : 'Bilinmeyen hata';
+    Durum.yukleniyor = false;
+    ciz();
+  });
+}
+
+function filtreliVeri() {
+  var v = Durum.veri || [];
+  if (Durum.filtreHat && Durum.filtreHat !== 'Hepsi') {
+    v = v.filter(function (r) { return r[SUTUN.hat] === Durum.filtreHat; });
+  }
+  return v;
+}
+
+/* --------------------------------------------------------------- ana render */
+function ciz() {
+  var icerik = document.getElementById('icerik');
+  var bilgi = document.getElementById('kayitBilgi');
+  if (!icerik) return;
+
+  if (Durum.yukleniyor) { icerik.innerHTML = durumIcerik('yukleniyor'); if (bilgi) bilgi.textContent = ''; return; }
+  if (Durum.hata) { icerik.innerHTML = durumIcerik('hata', Durum.hata); if (bilgi) bilgi.textContent = ''; return; }
+
+  var veri = filtreliVeri();
+  if (bilgi) {
+    bilgi.textContent = sayiBicim(veri.length) + ' kayıt' +
+      (Durum.filtreHat !== 'Hepsi' ? ' · ' + Durum.filtreHat : '');
+  }
+  if (!veri.length) { icerik.innerHTML = durumIcerik('bos'); return; }
+
+  var harita = { e1: ekranE1, e2: ekranE2, e3: ekranE3, e4: ekranE4 };
+  icerik.innerHTML = (harita[Durum.aktifEkran] || ekranE1)(veri);
+}
+
+/* ---------------------------------------------------------------- E1 KPI'lar */
+function ekranE1(satirlar) {
+  var d = donemAyir(satirlar);
+  var m = metrikler(satirlar);
+  var mev = metrikler(d.mevcut), onc = metrikler(d.onceki);
+
+  function delta(alan, dusukIyi) {
+    var a = mev[alan], b = onc[alan];
+    if (!b) return null;
+    var fark = (a - b) / b * 100;
+    var yon = fark > 0.5 ? 'artis' : (fark < -0.5 ? 'azalis' : 'duz');
+    var iyi = (yon === 'duz') ? true : (dusukIyi ? fark < 0 : fark > 0);
+    return { yuzde: Math.abs(fark), yon: yon, iyi: iyi };
+  }
+
+  var kartlar = [
+    kpiKart('Toplam Üretim', sayiBicim(m.toplamUretim) + ' adet', delta('toplamUretim', false)),
+    kpiKart('Toplam Hata', sayiBicim(m.toplamHata) + ' adet', delta('toplamHata', true)),
+    kpiKart('PPM', sayiBicim(m.ppm), delta('ppm', true)),
+    kpiKart('FPY', yuzdeBicim(m.fpy, 2), delta('fpy', false)),
+    kpiKart('Toplam Iskarta', paraBicim(m.toplamMaliyet), delta('toplamMaliyet', true)),
+    kpiKart('En Sık Hata', m.enSikHata, null)
+  ];
+
+  var not = '<p class="dipnot">PPM = (Σ Hata ÷ Σ Üretim) × 1.000.000 · ' +
+    'FPY = (1 − Σ Hata ÷ Σ Üretim) × 100 · ' +
+    'Değişim oku mevcut dönemi önceki döneme kıyaslar.</p>';
+
+  return '<div class="kpi-izgara">' + kartlar.join('') + '</div>' + not;
+}
+
+function kpiKart(ad, deger, delta) {
+  var alt;
+  if (delta) {
+    var ok = delta.yon === 'artis' ? '▲' : (delta.yon === 'azalis' ? '▼' : '▬');
+    var sinif = delta.iyi ? 'iyi' : 'kotu';
+    alt = '<div class="kpi-delta ' + sinif + '">' + ok + ' ' + yuzdeBicim(delta.yuzde, 1) +
+      ' <span class="kpi-delta-not">önceki döneme göre</span></div>';
+  } else {
+    alt = '<div class="kpi-delta noter">— referans yok</div>';
+  }
+  return '<div class="kpi-kart"><div class="kpi-ad">' + kacis(ad) + '</div>' +
+    '<div class="kpi-deger">' + kacis(deger) + '</div>' + alt + '</div>';
+}
+
+/* ----------------------------------------------------------------- E2 Trend */
+function ekranE2(satirlar) {
+  var seri = aylikSeri(satirlar);
+  if (!seri.length) return durumIcerik('bos');
+  var etik = seri.map(function (s) { return s.etiket; });
+  var ppm = seri.map(function (s) { return s.ppm; });
+  var maliyet = seri.map(function (s) { return s.maliyet; });
+
+  var yari = Math.max(1, Math.floor(seri.length / 2));
+  var refPpm = Math.round(ppm.slice(0, yari).reduce(function (s, x) { return s + x; }, 0) / yari);
+  var yesil = tema('--valeo-yesil-koyu', '#4E8A00');
+  var gri = tema('--gri-referans', '#9AA3A0');
+
+  var g1 = cizgiGrafik({
+    baslik: 'Aylık PPM eğilimi',
+    etiketler: etik,
+    yBicim: function (v) { return sayiBicim(v); },
+    seriler: [{ ad: 'Mevcut dönem PPM', renk: yesil, deger: ppm }],
+    referans: { deger: refPpm, ad: 'Önceki dönem ort. (' + sayiBicim(refPpm) + ')', renk: gri }
+  });
+  var g2 = sutunGrafik({
+    baslik: 'Aylık Iskarta Maliyeti',
+    kategoriler: etik, degerler: maliyet,
+    yBicim: function (v) { return sayiBicim(v); },
+    vurguSon: true
+  });
+  return grafikKart('Aylık PPM Eğilimi (dönem karşılaştırmalı)', g1) +
+    grafikKart('Aylık Iskarta Maliyeti (₺)', g2);
+}
+
+/* ---------------------------------------------------------------- E3 Pareto */
+function ekranE3(satirlar) {
+  var p = paretoHesap(satirlar);
+  if (!p.dizi.length) return durumIcerik('bos');
+  var g1 = paretoGrafik({
+    baslik: 'Hata Tipi Pareto', dizi: p.dizi,
+    yBicim: function (v) { return sayiBicim(v); }, esik: 80
+  });
+  var hb = hatBazli(satirlar);
+  var g2 = sutunGrafik({
+    baslik: 'Hat Bazında Hata Adedi',
+    kategoriler: hb.map(function (x) { return x.ad; }),
+    degerler: hb.map(function (x) { return x.adet; }),
+    yBicim: function (v) { return sayiBicim(v); }
+  });
+  return grafikKart('Hata Tipi Pareto (80/20 Odak)', g1) +
+    grafikKart('Hat Bazında Hata Adedi', g2);
+}
+
+/* ------------------------------------------------------------ E4 Kritik tablo */
+function ekranE4(satirlar) {
+  var kayitlar = kritikKayitlar(satirlar, 12);
+  if (!kayitlar.length) return durumIcerik('bos');
+  var govde = kayitlar.map(function (k) {
+    var r = k.satir, dr = k.durum;
+    return '<tr>' +
+      '<td>' + kacis(tarihBicim(r[SUTUN.tarih])) + '</td>' +
+      '<td>' + kacis(r[SUTUN.hat]) + '</td>' +
+      '<td>' + kacis(r[SUTUN.parca]) + '</td>' +
+      '<td>' + kacis(r[SUTUN.hataTipi]) + '</td>' +
+      '<td class="say">' + sayiBicim(r[SUTUN.hataAdedi]) + '</td>' +
+      '<td class="say">' + paraBicim(r[SUTUN.maliyet]) + '</td>' +
+      '<td>' + kacis(r[SUTUN.asama]) + '</td>' +
+      '<td><span class="rozet ' + dr.sinif + '">' + dr.ikon + ' ' + dr.ad + '</span></td>' +
+      '</tr>';
+  }).join('');
+  var tablo = '<table class="tablo"><thead><tr>' +
+    '<th>Tarih</th><th>Hat</th><th>Parça No</th><th>Hata Tipi</th>' +
+    '<th class="say">Hata</th><th class="say">Iskarta (₺)</th>' +
+    '<th>Tespit Aşaması</th><th>Durum</th></tr></thead><tbody>' + govde + '</tbody></table>';
+  return grafikKart('En Yüksek Maliyetli 12 Kayıt', tablo);
+}
+
+/* ------------------------------------------------------------------ yardımcı */
+function grafikKart(baslik, ic) {
+  return '<section class="kart"><h2 class="kart-baslik">' + kacis(baslik) + '</h2>' +
+    '<div class="grafik-govde">' + ic + '</div></section>';
+}
+
+function durumIcerik(tip, mesaj) {
+  if (tip === 'yukleniyor') {
+    return '<div class="durum" role="status" aria-live="polite">' +
+      '<div class="iskelet iskelet-satir"></div>' +
+      '<div class="iskelet-izgara">' +
+      '<div class="iskelet iskelet-kutu"></div><div class="iskelet iskelet-kutu"></div>' +
+      '<div class="iskelet iskelet-kutu"></div><div class="iskelet iskelet-kutu"></div></div>' +
+      '<div class="durum-mesaj">Veri yükleniyor…</div></div>';
+  }
+  if (tip === 'hata') {
+    return '<div class="durum hata" role="alert">' +
+      '<div class="durum-ikon">⚠</div>' +
+      '<div class="durum-baslik">Veri yüklenemedi</div>' +
+      '<div class="durum-mesaj">' + kacis(mesaj || '') + '</div>' +
+      '<button class="btn" type="button" data-aksiyon="yenile">Tekrar dene</button></div>';
+  }
+  return '<div class="durum bos">' +
+    '<div class="durum-ikon">∅</div>' +
+    '<div class="durum-baslik">Veri bulunamadı</div>' +
+    '<div class="durum-mesaj">' + kacis(mesaj || 'Seçili filtre için kayıt bulunmuyor.') + '</div></div>';
+}
+
+/* -------------------------------------------------------------- sekme/filtre */
+function sekmeleriKur() {
+  var dugmeler = document.querySelectorAll('[data-ekran]');
+  Array.prototype.forEach.call(dugmeler, function (d) {
+    d.addEventListener('click', function () {
+      Durum.aktifEkran = d.getAttribute('data-ekran');
+      Array.prototype.forEach.call(dugmeler, function (x) {
+        var aktif = x === d;
+        x.classList.toggle('aktif', aktif);
+        x.setAttribute('aria-selected', aktif ? 'true' : 'false');
+      });
+      ciz();
+    });
+  });
+}
+
+function filtreSecenekleriDoldur() {
+  var filtre = document.getElementById('filtreHat');
+  if (!filtre) return;
+  var mevcut = Durum.filtreHat || 'Hepsi';
+  var secenekler = ['Hepsi'].concat(hatlar(Durum.veri || []));
+  filtre.innerHTML = secenekler.map(function (h) {
+    return '<option value="' + kacis(h) + '"' + (h === mevcut ? ' selected' : '') + '>' +
+      kacis(h === 'Hepsi' ? 'Tüm Hatlar' : h) + '</option>';
+  }).join('');
+}
+
+/* ------------------------------------------------------------------ logo/üst */
+function logoYukle() {
+  var img = document.getElementById('logo');
+  if (!img) return;
+  function yaziMarka() {
+    var span = document.createElement('span');
+    span.className = 'logo-yazi';
+    span.textContent = 'VALEO';
+    if (img.parentNode) img.parentNode.replaceChild(span, img);
+  }
+  img.addEventListener('error', yaziMarka);
+  if (typeof google !== 'undefined' && google.script && google.script.run) {
+    google.script.run
+      .withSuccessHandler(function (uri) { if (uri) { img.src = uri; } else { yaziMarka(); } })
+      .withFailureHandler(yaziMarka)
+      .logoGetir();
+  } else {
+    var url = (typeof window !== 'undefined' && window.YEREL_LOGO_URL) ||
+      (document.body && document.body.getAttribute('data-logo'));
+    if (url) { img.src = url; } else { yaziMarka(); }
+  }
+}
+
+function guncellemeZamani() {
+  var el = document.getElementById('guncelleme');
+  if (!el) return;
+  var d = new Date();
+  el.textContent = 'Son güncelleme: ' + tarihBicim(d) + ' ' +
+    String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+}
+</script>

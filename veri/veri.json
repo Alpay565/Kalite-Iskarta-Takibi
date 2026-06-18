@@ -1,0 +1,2502 @@
+[
+  {
+    "Tarih": "2026-01-01",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 37,
+    "Üretim Adedi": 1601,
+    "Iskarta Maliyeti": 4502,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-01",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 17,
+    "Üretim Adedi": 834,
+    "Iskarta Maliyeti": 1508,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-01-01",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 53,
+    "Üretim Adedi": 1525,
+    "Iskarta Maliyeti": 7479,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-02",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 30,
+    "Üretim Adedi": 690,
+    "Iskarta Maliyeti": 2739,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-05",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 1536,
+    "Iskarta Maliyeti": 1598,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-01-07",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 39,
+    "Üretim Adedi": 1428,
+    "Iskarta Maliyeti": 19101,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-01-08",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 27,
+    "Üretim Adedi": 1381,
+    "Iskarta Maliyeti": 3369,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-09",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 992,
+    "Iskarta Maliyeti": 2280,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-01-11",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 80,
+    "Üretim Adedi": 1870,
+    "Iskarta Maliyeti": 24570,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-11",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 24,
+    "Üretim Adedi": 891,
+    "Iskarta Maliyeti": 1472,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-01-12",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 7,
+    "Üretim Adedi": 548,
+    "Iskarta Maliyeti": 927,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-13",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 31,
+    "Üretim Adedi": 1114,
+    "Iskarta Maliyeti": 9338,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-01-14",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 473,
+    "Iskarta Maliyeti": 522,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-14",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 46,
+    "Üretim Adedi": 1147,
+    "Iskarta Maliyeti": 32968,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-01-14",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 1289,
+    "Iskarta Maliyeti": 879,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-01-16",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 36,
+    "Üretim Adedi": 1606,
+    "Iskarta Maliyeti": 4715,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-18",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 8,
+    "Üretim Adedi": 291,
+    "Iskarta Maliyeti": 221,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-01-19",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 86,
+    "Üretim Adedi": 1940,
+    "Iskarta Maliyeti": 8703,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-21",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 255,
+    "Iskarta Maliyeti": 449,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-01-21",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 23,
+    "Üretim Adedi": 1155,
+    "Iskarta Maliyeti": 4039,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-23",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 46,
+    "Üretim Adedi": 1499,
+    "Iskarta Maliyeti": 5949,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-24",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 37,
+    "Üretim Adedi": 1013,
+    "Iskarta Maliyeti": 5870,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-01-24",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 353,
+    "Iskarta Maliyeti": 8640,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-01-24",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 29,
+    "Üretim Adedi": 791,
+    "Iskarta Maliyeti": 2976,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-24",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 1444,
+    "Iskarta Maliyeti": 2076,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-25",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 18,
+    "Üretim Adedi": 562,
+    "Iskarta Maliyeti": 1715,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-26",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 38,
+    "Üretim Adedi": 964,
+    "Iskarta Maliyeti": 5756,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-26",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 518,
+    "Iskarta Maliyeti": 1957,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-01-28",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 80,
+    "Üretim Adedi": 1922,
+    "Iskarta Maliyeti": 11612,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-01-28",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 29,
+    "Üretim Adedi": 1310,
+    "Iskarta Maliyeti": 15045,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-01-28",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 7,
+    "Üretim Adedi": 415,
+    "Iskarta Maliyeti": 188,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-01-30",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 2,
+    "Üretim Adedi": 328,
+    "Iskarta Maliyeti": 1412,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-01-30",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 1717,
+    "Iskarta Maliyeti": 3185,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-01-31",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 944,
+    "Iskarta Maliyeti": 3743,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-01",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 34,
+    "Üretim Adedi": 1074,
+    "Iskarta Maliyeti": 3317,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-01",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 38,
+    "Üretim Adedi": 1394,
+    "Iskarta Maliyeti": 10653,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-02",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 287,
+    "Iskarta Maliyeti": 868,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-02",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 16,
+    "Üretim Adedi": 1450,
+    "Iskarta Maliyeti": 2702,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-02",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 17,
+    "Üretim Adedi": 915,
+    "Iskarta Maliyeti": 3359,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-03",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 661,
+    "Iskarta Maliyeti": 486,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-04",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 40,
+    "Üretim Adedi": 946,
+    "Iskarta Maliyeti": 2606,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-05",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 16,
+    "Üretim Adedi": 1952,
+    "Iskarta Maliyeti": 815,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-05",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 4,
+    "Üretim Adedi": 1152,
+    "Iskarta Maliyeti": 737,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-05",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 37,
+    "Üretim Adedi": 1779,
+    "Iskarta Maliyeti": 1973,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-02-06",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 1,
+    "Üretim Adedi": 342,
+    "Iskarta Maliyeti": 102,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-06",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 42,
+    "Üretim Adedi": 957,
+    "Iskarta Maliyeti": 13445,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-02-06",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 81,
+    "Üretim Adedi": 1850,
+    "Iskarta Maliyeti": 16957,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-02-07",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 70,
+    "Üretim Adedi": 1990,
+    "Iskarta Maliyeti": 9393,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-07",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 2,
+    "Üretim Adedi": 640,
+    "Iskarta Maliyeti": 589,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-07",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 54,
+    "Üretim Adedi": 1804,
+    "Iskarta Maliyeti": 4145,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-02-08",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 42,
+    "Üretim Adedi": 953,
+    "Iskarta Maliyeti": 8125,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-08",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 758,
+    "Iskarta Maliyeti": 162,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-02-08",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 62,
+    "Üretim Adedi": 1502,
+    "Iskarta Maliyeti": 9375,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-11",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 7,
+    "Üretim Adedi": 1145,
+    "Iskarta Maliyeti": 236,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-02-14",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 35,
+    "Üretim Adedi": 983,
+    "Iskarta Maliyeti": 3064,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-02-14",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 28,
+    "Üretim Adedi": 904,
+    "Iskarta Maliyeti": 16963,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-02-15",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 24,
+    "Üretim Adedi": 1910,
+    "Iskarta Maliyeti": 5322,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-16",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 48,
+    "Üretim Adedi": 1519,
+    "Iskarta Maliyeti": 10601,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-16",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 54,
+    "Üretim Adedi": 1635,
+    "Iskarta Maliyeti": 5914,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-17",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 34,
+    "Üretim Adedi": 1327,
+    "Iskarta Maliyeti": 8123,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-02-17",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 28,
+    "Üretim Adedi": 786,
+    "Iskarta Maliyeti": 2853,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-18",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 4,
+    "Üretim Adedi": 1091,
+    "Iskarta Maliyeti": 670,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-19",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 17,
+    "Üretim Adedi": 606,
+    "Iskarta Maliyeti": 1247,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-20",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 77,
+    "Üretim Adedi": 1844,
+    "Iskarta Maliyeti": 3467,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-20",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 27,
+    "Üretim Adedi": 926,
+    "Iskarta Maliyeti": 6259,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-21",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 47,
+    "Üretim Adedi": 1147,
+    "Iskarta Maliyeti": 26493,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-02-22",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 8,
+    "Üretim Adedi": 1982,
+    "Iskarta Maliyeti": 2996,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-02-24",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 1101,
+    "Iskarta Maliyeti": 528,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-24",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 3,
+    "Üretim Adedi": 567,
+    "Iskarta Maliyeti": 1688,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-02-24",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 4,
+    "Üretim Adedi": 501,
+    "Iskarta Maliyeti": 167,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-27",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 1811,
+    "Iskarta Maliyeti": 3488,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-28",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 49,
+    "Üretim Adedi": 1726,
+    "Iskarta Maliyeti": 5185,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-02-28",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 32,
+    "Üretim Adedi": 820,
+    "Iskarta Maliyeti": 7005,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-01",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 9,
+    "Üretim Adedi": 997,
+    "Iskarta Maliyeti": 1903,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-01",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 655,
+    "Iskarta Maliyeti": 4110,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-02",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 44,
+    "Üretim Adedi": 1071,
+    "Iskarta Maliyeti": 3799,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-03",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 45,
+    "Üretim Adedi": 1807,
+    "Iskarta Maliyeti": 2597,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-03",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 2,
+    "Üretim Adedi": 285,
+    "Iskarta Maliyeti": 73,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-04",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 22,
+    "Üretim Adedi": 1337,
+    "Iskarta Maliyeti": 4853,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-05",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 20,
+    "Üretim Adedi": 721,
+    "Iskarta Maliyeti": 1636,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-06",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 11,
+    "Üretim Adedi": 401,
+    "Iskarta Maliyeti": 1766,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-09",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 23,
+    "Üretim Adedi": 827,
+    "Iskarta Maliyeti": 613,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-09",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 33,
+    "Üretim Adedi": 861,
+    "Iskarta Maliyeti": 2580,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-09",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 16,
+    "Üretim Adedi": 728,
+    "Iskarta Maliyeti": 497,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-10",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 8,
+    "Üretim Adedi": 819,
+    "Iskarta Maliyeti": 1280,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-10",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 7,
+    "Üretim Adedi": 751,
+    "Iskarta Maliyeti": 1295,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-11",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 7,
+    "Üretim Adedi": 558,
+    "Iskarta Maliyeti": 222,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-12",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 7,
+    "Üretim Adedi": 786,
+    "Iskarta Maliyeti": 413,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-12",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 4,
+    "Üretim Adedi": 1175,
+    "Iskarta Maliyeti": 369,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-12",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 34,
+    "Üretim Adedi": 1724,
+    "Iskarta Maliyeti": 1037,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-12",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 350,
+    "Iskarta Maliyeti": 3712,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-12",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 989,
+    "Iskarta Maliyeti": 1298,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-13",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 50,
+    "Üretim Adedi": 1977,
+    "Iskarta Maliyeti": 8828,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-14",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 812,
+    "Iskarta Maliyeti": 2879,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-03-14",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 1627,
+    "Iskarta Maliyeti": 6743,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-15",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 42,
+    "Üretim Adedi": 1509,
+    "Iskarta Maliyeti": 10014,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-15",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 18,
+    "Üretim Adedi": 639,
+    "Iskarta Maliyeti": 2882,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-16",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 21,
+    "Üretim Adedi": 577,
+    "Iskarta Maliyeti": 8544,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-03-17",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 38,
+    "Üretim Adedi": 896,
+    "Iskarta Maliyeti": 2481,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-17",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 12,
+    "Üretim Adedi": 1687,
+    "Iskarta Maliyeti": 1507,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-18",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 269,
+    "Iskarta Maliyeti": 1241,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-03-19",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 34,
+    "Üretim Adedi": 1127,
+    "Iskarta Maliyeti": 1184,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-19",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 41,
+    "Üretim Adedi": 958,
+    "Iskarta Maliyeti": 6432,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-20",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 3,
+    "Üretim Adedi": 265,
+    "Iskarta Maliyeti": 326,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-20",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 20,
+    "Üretim Adedi": 1812,
+    "Iskarta Maliyeti": 4019,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-21",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 43,
+    "Üretim Adedi": 1409,
+    "Iskarta Maliyeti": 8276,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-21",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 568,
+    "Iskarta Maliyeti": 1615,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-22",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 50,
+    "Üretim Adedi": 1996,
+    "Iskarta Maliyeti": 8324,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-22",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 629,
+    "Iskarta Maliyeti": 2006,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-22",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 51,
+    "Üretim Adedi": 1271,
+    "Iskarta Maliyeti": 4892,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-22",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 793,
+    "Iskarta Maliyeti": 3028,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-22",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 56,
+    "Üretim Adedi": 1411,
+    "Iskarta Maliyeti": 26972,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-03-22",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 1430,
+    "Iskarta Maliyeti": 2849,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-24",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 27,
+    "Üretim Adedi": 1112,
+    "Iskarta Maliyeti": 2464,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-03-25",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 1026,
+    "Iskarta Maliyeti": 2480,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-25",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 19,
+    "Üretim Adedi": 591,
+    "Iskarta Maliyeti": 2832,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-26",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 24,
+    "Üretim Adedi": 546,
+    "Iskarta Maliyeti": 5368,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-26",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 36,
+    "Üretim Adedi": 1069,
+    "Iskarta Maliyeti": 1610,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-26",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 40,
+    "Üretim Adedi": 1070,
+    "Iskarta Maliyeti": 6334,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-03-27",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 1566,
+    "Iskarta Maliyeti": 1561,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-03-28",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 28,
+    "Üretim Adedi": 712,
+    "Iskarta Maliyeti": 6574,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-02",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 48,
+    "Üretim Adedi": 1847,
+    "Iskarta Maliyeti": 4539,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-04",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 54,
+    "Üretim Adedi": 1236,
+    "Iskarta Maliyeti": 11201,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-04",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 45,
+    "Üretim Adedi": 1640,
+    "Iskarta Maliyeti": 7629,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-04",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 1400,
+    "Iskarta Maliyeti": 1295,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-05",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 1170,
+    "Iskarta Maliyeti": 1121,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-05",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 869,
+    "Iskarta Maliyeti": 2751,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-06",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 51,
+    "Üretim Adedi": 1713,
+    "Iskarta Maliyeti": 3327,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-07",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 57,
+    "Üretim Adedi": 1951,
+    "Iskarta Maliyeti": 6826,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-08",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 294,
+    "Iskarta Maliyeti": 3009,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-08",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 21,
+    "Üretim Adedi": 533,
+    "Iskarta Maliyeti": 4490,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-08",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 561,
+    "Iskarta Maliyeti": 728,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-09",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 46,
+    "Üretim Adedi": 1882,
+    "Iskarta Maliyeti": 4815,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-10",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 970,
+    "Iskarta Maliyeti": 812,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-11",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 1394,
+    "Iskarta Maliyeti": 680,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-11",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 31,
+    "Üretim Adedi": 1340,
+    "Iskarta Maliyeti": 4927,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-12",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 44,
+    "Üretim Adedi": 1028,
+    "Iskarta Maliyeti": 11281,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-12",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 1348,
+    "Iskarta Maliyeti": 240,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-12",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 3,
+    "Üretim Adedi": 594,
+    "Iskarta Maliyeti": 300,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-12",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 7,
+    "Üretim Adedi": 1427,
+    "Iskarta Maliyeti": 767,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-14",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 4,
+    "Üretim Adedi": 1343,
+    "Iskarta Maliyeti": 697,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-04-15",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 9,
+    "Üretim Adedi": 1258,
+    "Iskarta Maliyeti": 704,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-17",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 11,
+    "Üretim Adedi": 1035,
+    "Iskarta Maliyeti": 1541,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-18",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 309,
+    "Iskarta Maliyeti": 857,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-18",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 16,
+    "Üretim Adedi": 356,
+    "Iskarta Maliyeti": 2384,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-19",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 20,
+    "Üretim Adedi": 1367,
+    "Iskarta Maliyeti": 5496,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-19",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 40,
+    "Üretim Adedi": 1037,
+    "Iskarta Maliyeti": 3352,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-20",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 555,
+    "Iskarta Maliyeti": 3405,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-20",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 3,
+    "Üretim Adedi": 797,
+    "Iskarta Maliyeti": 218,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-04-22",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 73,
+    "Üretim Adedi": 1723,
+    "Iskarta Maliyeti": 3753,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-22",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 19,
+    "Üretim Adedi": 590,
+    "Iskarta Maliyeti": 532,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-24",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 26,
+    "Üretim Adedi": 1222,
+    "Iskarta Maliyeti": 1678,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-24",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 63,
+    "Üretim Adedi": 1880,
+    "Iskarta Maliyeti": 8976,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-25",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 556,
+    "Iskarta Maliyeti": 2034,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-25",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 9,
+    "Üretim Adedi": 404,
+    "Iskarta Maliyeti": 1357,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-26",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 12,
+    "Üretim Adedi": 1015,
+    "Iskarta Maliyeti": 1323,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-27",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 36,
+    "Üretim Adedi": 1832,
+    "Iskarta Maliyeti": 3073,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-27",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 27,
+    "Üretim Adedi": 1241,
+    "Iskarta Maliyeti": 3496,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-28",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 22,
+    "Üretim Adedi": 1582,
+    "Iskarta Maliyeti": 3269,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-04-28",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 31,
+    "Üretim Adedi": 1142,
+    "Iskarta Maliyeti": 1873,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-29",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 61,
+    "Üretim Adedi": 1716,
+    "Iskarta Maliyeti": 5119,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-04-30",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 43,
+    "Üretim Adedi": 957,
+    "Iskarta Maliyeti": 4849,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-01",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 1152,
+    "Iskarta Maliyeti": 4486,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-01",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 66,
+    "Üretim Adedi": 1689,
+    "Iskarta Maliyeti": 12710,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-02",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 30,
+    "Üretim Adedi": 1103,
+    "Iskarta Maliyeti": 1960,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-02",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 27,
+    "Üretim Adedi": 774,
+    "Iskarta Maliyeti": 1167,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-02",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 29,
+    "Üretim Adedi": 683,
+    "Iskarta Maliyeti": 5994,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-02",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 39,
+    "Üretim Adedi": 921,
+    "Iskarta Maliyeti": 7080,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-02",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 20,
+    "Üretim Adedi": 975,
+    "Iskarta Maliyeti": 4376,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-02",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 1281,
+    "Iskarta Maliyeti": 931,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-04",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 50,
+    "Üretim Adedi": 1306,
+    "Iskarta Maliyeti": 3649,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-05",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 38,
+    "Üretim Adedi": 838,
+    "Iskarta Maliyeti": 9020,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-05",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 38,
+    "Üretim Adedi": 1419,
+    "Iskarta Maliyeti": 17886,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-05-06",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 19,
+    "Üretim Adedi": 1152,
+    "Iskarta Maliyeti": 4157,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-07",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 779,
+    "Iskarta Maliyeti": 1390,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-07",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 9,
+    "Üretim Adedi": 1132,
+    "Iskarta Maliyeti": 2610,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-08",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 26,
+    "Üretim Adedi": 755,
+    "Iskarta Maliyeti": 2525,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-09",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 55,
+    "Üretim Adedi": 1327,
+    "Iskarta Maliyeti": 7144,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-10",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 46,
+    "Üretim Adedi": 1042,
+    "Iskarta Maliyeti": 4047,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-11",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 731,
+    "Iskarta Maliyeti": 1348,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-11",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 26,
+    "Üretim Adedi": 734,
+    "Iskarta Maliyeti": 12758,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-12",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 45,
+    "Üretim Adedi": 1639,
+    "Iskarta Maliyeti": 4355,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-14",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 47,
+    "Üretim Adedi": 1230,
+    "Iskarta Maliyeti": 5515,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-16",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 1608,
+    "Iskarta Maliyeti": 1692,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-16",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 58,
+    "Üretim Adedi": 1571,
+    "Iskarta Maliyeti": 19228,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-05-16",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 2,
+    "Üretim Adedi": 499,
+    "Iskarta Maliyeti": 78,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-17",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 12,
+    "Üretim Adedi": 1439,
+    "Iskarta Maliyeti": 2414,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-17",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 27,
+    "Üretim Adedi": 848,
+    "Iskarta Maliyeti": 2038,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-17",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 975,
+    "Iskarta Maliyeti": 1729,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-18",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 44,
+    "Üretim Adedi": 1537,
+    "Iskarta Maliyeti": 6633,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-18",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 57,
+    "Üretim Adedi": 1771,
+    "Iskarta Maliyeti": 8999,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-18",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 12,
+    "Üretim Adedi": 573,
+    "Iskarta Maliyeti": 1309,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-18",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 22,
+    "Üretim Adedi": 1022,
+    "Iskarta Maliyeti": 3249,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-18",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 799,
+    "Iskarta Maliyeti": 1873,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-19",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 38,
+    "Üretim Adedi": 1134,
+    "Iskarta Maliyeti": 3330,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-20",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 8,
+    "Üretim Adedi": 697,
+    "Iskarta Maliyeti": 495,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-20",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 21,
+    "Üretim Adedi": 500,
+    "Iskarta Maliyeti": 1383,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-20",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 835,
+    "Iskarta Maliyeti": 3355,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-21",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 12,
+    "Üretim Adedi": 280,
+    "Iskarta Maliyeti": 2599,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-21",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 40,
+    "Üretim Adedi": 1437,
+    "Iskarta Maliyeti": 5150,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-21",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 50,
+    "Üretim Adedi": 1684,
+    "Iskarta Maliyeti": 13438,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-21",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 9,
+    "Üretim Adedi": 764,
+    "Iskarta Maliyeti": 384,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-22",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 35,
+    "Üretim Adedi": 944,
+    "Iskarta Maliyeti": 3258,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-22",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 60,
+    "Üretim Adedi": 1503,
+    "Iskarta Maliyeti": 7932,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-23",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 369,
+    "Iskarta Maliyeti": 1377,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-24",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 701,
+    "Iskarta Maliyeti": 2688,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-24",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 43,
+    "Üretim Adedi": 1937,
+    "Iskarta Maliyeti": 3875,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-25",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 12,
+    "Üretim Adedi": 1195,
+    "Iskarta Maliyeti": 1336,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-05-26",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 18,
+    "Üretim Adedi": 1009,
+    "Iskarta Maliyeti": 2641,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-26",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 34,
+    "Üretim Adedi": 1108,
+    "Iskarta Maliyeti": 6656,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-26",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 32,
+    "Üretim Adedi": 1683,
+    "Iskarta Maliyeti": 6589,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-27",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 820,
+    "Iskarta Maliyeti": 849,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-28",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 26,
+    "Üretim Adedi": 1833,
+    "Iskarta Maliyeti": 5022,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-28",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 26,
+    "Üretim Adedi": 1509,
+    "Iskarta Maliyeti": 3611,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-28",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 45,
+    "Üretim Adedi": 1515,
+    "Iskarta Maliyeti": 6116,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-29",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 635,
+    "Iskarta Maliyeti": 476,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-30",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 24,
+    "Üretim Adedi": 772,
+    "Iskarta Maliyeti": 2580,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-30",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 82,
+    "Üretim Adedi": 1880,
+    "Iskarta Maliyeti": 9613,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-30",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 533,
+    "Iskarta Maliyeti": 1095,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-05-31",
+    "Parça No": "VLO-1006",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Montaj Hatası",
+    "Hata Adedi": 30,
+    "Üretim Adedi": 1510,
+    "Iskarta Maliyeti": 10628,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-05-31",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 68,
+    "Üretim Adedi": 1612,
+    "Iskarta Maliyeti": 9034,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-02",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 9,
+    "Üretim Adedi": 273,
+    "Iskarta Maliyeti": 1082,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-03",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 72,
+    "Üretim Adedi": 1953,
+    "Iskarta Maliyeti": 33850,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-06-04",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 966,
+    "Iskarta Maliyeti": 3470,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-06-04",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 2,
+    "Üretim Adedi": 416,
+    "Iskarta Maliyeti": 461,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-06-05",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Elektriksel Arıza",
+    "Hata Adedi": 13,
+    "Üretim Adedi": 302,
+    "Iskarta Maliyeti": 2925,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-06-05",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 33,
+    "Üretim Adedi": 858,
+    "Iskarta Maliyeti": 13626,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-06-05",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 28,
+    "Üretim Adedi": 1571,
+    "Iskarta Maliyeti": 3674,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-06",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 11,
+    "Üretim Adedi": 739,
+    "Iskarta Maliyeti": 481,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-08",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 18,
+    "Üretim Adedi": 1910,
+    "Iskarta Maliyeti": 9990,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-06-09",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 37,
+    "Üretim Adedi": 1472,
+    "Iskarta Maliyeti": 19617,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-06-10",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Renk Tonu Farkı",
+    "Hata Adedi": 70,
+    "Üretim Adedi": 1898,
+    "Iskarta Maliyeti": 3265,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-10",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 37,
+    "Üretim Adedi": 1169,
+    "Iskarta Maliyeti": 2681,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-06-11",
+    "Parça No": "VLO-1003",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 5,
+    "Üretim Adedi": 926,
+    "Iskarta Maliyeti": 392,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-06-11",
+    "Parça No": "VLO-1009",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 81,
+    "Üretim Adedi": 1853,
+    "Iskarta Maliyeti": 29846,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-06-11",
+    "Parça No": "VLO-1011",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 749,
+    "Iskarta Maliyeti": 254,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-12",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 24,
+    "Üretim Adedi": 1109,
+    "Iskarta Maliyeti": 861,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-12",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 28,
+    "Üretim Adedi": 907,
+    "Iskarta Maliyeti": 2976,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-13",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Yüzey Çiziği",
+    "Hata Adedi": 18,
+    "Üretim Adedi": 535,
+    "Iskarta Maliyeti": 758,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-13",
+    "Parça No": "VLO-1002",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 14,
+    "Üretim Adedi": 363,
+    "Iskarta Maliyeti": 5067,
+    "Tespit Aşaması": "Müşteri Sahası"
+  },
+  {
+    "Tarih": "2026-06-13",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 4,
+    "Üretim Adedi": 364,
+    "Iskarta Maliyeti": 536,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-06-13",
+    "Parça No": "VLO-1008",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 6,
+    "Üretim Adedi": 1150,
+    "Iskarta Maliyeti": 539,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-13",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 9,
+    "Üretim Adedi": 915,
+    "Iskarta Maliyeti": 868,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-06-13",
+    "Parça No": "VLO-1005",
+    "Hat": "Hat-4",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 577,
+    "Iskarta Maliyeti": 3482,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-06-14",
+    "Parça No": "VLO-1007",
+    "Hat": "Hat-1",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 20,
+    "Üretim Adedi": 512,
+    "Iskarta Maliyeti": 2081,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-14",
+    "Parça No": "VLO-1010",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 25,
+    "Üretim Adedi": 1210,
+    "Iskarta Maliyeti": 2258,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-15",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Lehim Hatası",
+    "Hata Adedi": 28,
+    "Üretim Adedi": 1149,
+    "Iskarta Maliyeti": 3933,
+    "Tespit Aşaması": "Hat İçi"
+  },
+  {
+    "Tarih": "2026-06-15",
+    "Parça No": "VLO-1004",
+    "Hat": "Hat-2",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 21,
+    "Üretim Adedi": 589,
+    "Iskarta Maliyeti": 2052,
+    "Tespit Aşaması": "Girdi Kontrol"
+  },
+  {
+    "Tarih": "2026-06-15",
+    "Parça No": "VLO-1000",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Conta Sızdırması",
+    "Hata Adedi": 10,
+    "Üretim Adedi": 466,
+    "Iskarta Maliyeti": 2368,
+    "Tespit Aşaması": "Final Kontrol"
+  },
+  {
+    "Tarih": "2026-06-15",
+    "Parça No": "VLO-1001",
+    "Hat": "Hat-3",
+    "Hata Tipi": "Boyut Sapması",
+    "Hata Adedi": 15,
+    "Üretim Adedi": 1041,
+    "Iskarta Maliyeti": 1537,
+    "Tespit Aşaması": "Hat İçi"
+  }
+]

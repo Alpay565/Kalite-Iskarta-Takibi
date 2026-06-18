@@ -31,8 +31,12 @@ yol gösterir. Her şey **tarayıcı tabanlıdır** (iş bilgisayarına kurulum 
 1. [sheets.new](https://sheets.new) → yeni Sheet → **Dosya > İçe aktar** → `veri/veri.csv` yükle
    → "Mevcut sayfayı değiştir" / yeni sayfa. **Sayfa (sekme) adını `veri` yap.**
 2. Sheet'i adlandır (örn. `S2-Kalite-Veri`) ve kaydet.
-3. claude.ai → Project → **Connectors** → Google Drive/Sheets bağlayıcısını ekle ve bu Sheet'e erişim ver.
-4. 📸 `ekran-goruntuleri/connector-bagli.png` (bağlantının kurulu olduğu ekran).
+3. **Bağlayıcıyı aç (bir kerelik):** Sol altta adına (**"Alpay Mutlu · Pro plan"**) tıkla →
+   **Settings/Ayarlar → Connectors/Bağlayıcılar → Google Drive → Connect** → Google hesabınla izin ver.
+   *(Menüyü göremezsen "Browse/Add connectors" veya "Feature preview" altına bak; plan/bölgeye göre yeri değişebilir.)*
+4. **Sheet'i sohbete getir:** Project'te yeni sohbet aç → mesaj kutusundaki **`+`** → **Google Drive / Add from Drive**
+   → bu Sheet'i seç. (Connector menüsü hiç yoksa pratik yol budur; yine canlı okunur.)
+5. 📸 `ekran-goruntuleri/connector-bagli.png` (Google Drive'ın bağlı göründüğü ekran).
 
 ## 4) Tur A — Boş Sohbet (Kontrol)
 1. **Project DIŞINDA** yeni boş sohbet aç.

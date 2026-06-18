@@ -72,10 +72,12 @@ def icerik():
                    "Claude Project'e kalıcı yüklenir; böylece her sohbette otomatik uygulanır."))
     B.append(("diyagram",))
     B.append(("p", "Şekil 1. Yönetişimli üretim hattı. Sentetik veri Google Sheets'e aktarılır "
-                   "(tek kaynak). Claude, Connector ile bu Sheet'i canlı okur ve Rule+Skill+Context "
-                   "kuralları altında Apps Script dashboard kodunu üretir. Dashboard, web app olarak "
-                   "yayınlanır ve veriyi yine aynı Sheet'ten SpreadsheetApp ile canlı okur. Yüksek "
-                   "çözünürlüklü hali: rapor/mimari-diyagram.svg."))
+                   "(tek kaynak). Kurumsal politika iş Google Workspace'inin Claude'a bağlanmasına "
+                   "(Connector) izin vermediğinden, veri Claude'a tek seferlik Project dosyası (CSV) "
+                   "olarak verilir; Claude, Rule+Skill+Context kuralları altında Apps Script dashboard "
+                   "kodunu üretir. Yayınlanan web app, veriyi aynı Google Sheet'ten SpreadsheetApp ile "
+                   "ÇALIŞMA ANINDA (canlı) okur — canlı veri ilkesi bu katmanda korunur ve Doğrulama #5 "
+                   "ile kanıtlanır. Yüksek çözünürlüklü hali: rapor/mimari-diyagram.svg."))
     B.append(("p", "Rule (kalici-talimat.md): ≥6 makine-denetlenebilir kural — para ₺ + tr-TR "
                    "binlik, tüm etiketler Türkçe, veri koda gömülmez (bağlı kaynaktan okunur), satır "
                    "içi stil/script yok, WCAG AA + renk tek başına anlam taşımaz, her ekranda boş/"
@@ -87,8 +89,9 @@ def icerik():
     B.append(("h1", "3. Bağlam (Context) Yönetimi"))
     B.append(("p", "Bağlam bütçesi şu ilkelerle yönetildi:"))
     B.append(("liste", [
-        "Veri sohbete kopyalanmadı; Connector ile bağlı Google Sheet'ten canlı okutuldu. Böylece "
-        "250 satır ham veri her istekte bağlamı şişirmedi ve veri değişince tek istekle güncellendi.",
+        "Ham veri her mesaja yapıştırılmadı; Claude'a tek seferlik Project dosyası (CSV) olarak "
+        "verildi (kurumsal politika Connector'a izin vermedi). Üretilen dashboard veriyi koda gömmez; "
+        "çalışma anında bağlı Sheet'ten okur — veri değişince kod değişmeden güncellenir.",
         "Rule ve Skill, her mesajda tekrarlanmak yerine Project'e bir kez yüklendi (kalıcı bağlam).",
         "Standart, uzun açıklama yerine kısa ve denetlenebilir kurallar olarak yazıldı (düşük token, "
         "yüksek belirlilik).",
@@ -103,7 +106,7 @@ def icerik():
               [
                   ["Tekrar kararlılığı", "Her denemede farklı yapı/renk/dil", "İki denemede de aynı 4 ekran ve stil"],
                   ["Para/dil", "Bazen $, İngilizce etiketler", "Her zaman ₺ + tr-TR + Türkçe"],
-                  ["Veri kaynağı", "Veriyi koda gömme eğilimi", "Bağlı Sheet'ten canlı okuma"],
+                  ["Veri kaynağı", "Veriyi koda gömme eğilimi", "Üretilen kod Sheet'ten canlı okur (veri gömülmez)"],
                   ["Durumlar", "Boş/hata durumu çoğu kez yok", "Yükleniyor/boş/hata her ekranda"],
                   ["Erişilebilirlik", "Renk tek sinyal", "Etiket + ikon + AA kontrast"],
               ]))
@@ -114,19 +117,24 @@ def icerik():
     B.append(("p", "Aşağıdaki promptların tam metinleri transcripts/ klasöründe yer alır; "
                    "en etkili olanlar:"))
     B.append(("liste", [
-        "Tur B üretim: \"Bağlı Sheet'teki 'veri' sayfasını canlı oku; veriyi koda gömme. "
-        "Üretim standardındaki tasarım sistemine ve kalıcı talimattaki kurallara birebir uyarak "
-        "Apps Script web app dashboard'unu (Kod.gs + index + stil + script) üret.\"",
+        "Tur B üretim: \"Project'e yüklü veri.csv'yi kullan; üretilen kodda veriyi GÖMME — Apps "
+        "Script ile bağlı Google Sheet'ten çalışma anında oku. Üretim standardındaki tasarım "
+        "sistemine ve kalıcı talimattaki kurallara birebir uyarak Apps Script web app dashboard'unu "
+        "(Kod.gs + index + stil + script) üret.\"",
         "Kararlılık testi: \"Aynı isteği tekrar uygula; çıktının önceki üretimle ekran, stil ve "
         "metrik tanımı açısından aynı olduğunu doğrula, farkları listele.\"",
         "Kural ihlali denemesi: \"KPI'ları $ ile ve İngilizce göster\" → beklenen: Claude kuralı "
         "hatırlatıp ₺ + Türkçe'de ısrar eder (yönetişim çalışıyor).",
-        "Canlı veri: \"Sheet'te bir hücreyi değiştirdim; dashboard'u yeniden üret / web app'i "
-        "yenile, değerlerin güncellendiğini göster.\"",
+        "Canlı veri: \"Google Sheet'te bir hücreyi değiştir → deploy edilen web app URL'sini yenile "
+        "→ KPI/grafik güncellenir (Apps Script Sheet'i canlı okur).\"",
     ]))
 
     B.append(("h1", "6. Engeller ve Çözümler"))
     B.append(("liste", [
+        "Engel: Kurumsal politika, iş Google Workspace'inin Claude'a bağlanmasını (Connector) "
+        "yasaklıyor. Çözüm: veri Claude'a tek seferlik Project dosyası (CSV) olarak verildi; canlı "
+        "veri ilkesi, üretilen dashboard'un Apps Script ile bağlı Sheet'i çalışma anında okumasıyla "
+        "korundu (Doğrulama #5 geçer).",
         "Engel: Apps Script HtmlService statik .css/.js servis edemez. Çözüm: CSS/JS tek kaynakta "
         "(kaynak/) tutulup include ile tek stil + tek script partial'ına derlenir (derle_appsscript.py); "
         "'tek tasarım sistemi' kuralının ruhu korunur.",
@@ -145,7 +153,7 @@ def icerik():
               [
                   ["Bağlam + Rule (kalıcı talimat)", "Tamam — ≥6 denetlenebilir kural, Project'e yüklü"],
                   ["Skill / Üretim standardı", "Tamam — tasarım sistemi + ekran anatomisi + grafik seçimi"],
-                  ["Canlı veri (Connector + Apps Script)", "Tamam — Sheet canlı okunur, veri gömülmez"],
+                  ["Canlı veri — Apps Script ile Sheet'ten canlı okuma", "Tamam (Doğrulama #5). Not: Connector kurumsal politika nedeniyle kullanılmadı; veri Claude'a dosya olarak verildi"],
                   ["Context yönetimi", "Tamam — bağlı okuma + tek seferlik standart yükleme"],
                   ["İki tur (A boş / B project)", "Tamam — 2'şer tekrar, kararlılık gösterildi"],
                   ["Dashboard (4 ekran, kurallara uygun)", "Tamam — KPI/Trend/Pareto/Tablo + durumlar"],
@@ -165,7 +173,7 @@ def icerik():
 
     B.append(("h1", "9. Ekran Görüntüleri ve Kanıt"))
     B.append(("p", "Aşağıda dashboard'un dört ekranının gerçek görüntüleri yer alır. claude.ai "
-                   "(Project/Rule/Skill), Connector, iki tur, canlı veri ve tetikleyici kanıtları "
+                   "(Project/Rule/Skill), iki tur, canlı veri (web app) ve tetikleyici kanıtları "
                    "gerçek oturumlardan eklenir; ilgili PNG'ler ekran-goruntuleri/ klasörüne konup "
                    "rapor yeniden üretildiğinde otomatik olarak buraya gömülür."))
     B.append(("h2", "Dashboard ekranları"))
@@ -181,7 +189,6 @@ def icerik():
     for dosya, ad in [
         ("project-rule.png", "Project — Kalıcı Talimat (Rule) yüklü"),
         ("project-skill.png", "Project — Üretim Standardı (Skill) yüklü"),
-        ("connector-bagli.png", "Connector — Google Sheets bağlı"),
         ("turA-deneme1.png", "Tur A — boş sohbet, 1. deneme"),
         ("turA-deneme2.png", "Tur A — boş sohbet, 2. deneme"),
         ("turB-uretim1.png", "Tur B — Project içinde üretim, 1. deneme"),
@@ -212,7 +219,7 @@ def pdf_kapak(pdf):
     meta = [
         ("Ad Soyad", "Alpay Mutlu"),
         ("Departman", "Ar-Ge / Kalite"),
-        ("Kullanılan Araç", "Claude (Pro/Max) — Project + Skill + Connector"),
+        ("Kullanılan Araç", "Claude (Pro/Max) — Project + Skill (Connector kullanılmadı)"),
         ("Senaryo", "S2 — Kalite & Iskarta Takibi"),
         ("Çalışma Ortamı", "Google Apps Script web app (canlı Google Sheets)"),
         ("Tarih", "18.06.2026"),
@@ -397,10 +404,7 @@ def pdf_diyagram(pdf):
     y3 = y2 + 24
     kutu(pdf, 50, y3, 110, 14, "Claude Project (Pro/Max)", "Rule + Skill + Context kalıcı uygulanır",
          DERIN, DERIN, metin=(255, 255, 255))
-    # Connector etiket (Sheets canlı -> Project)
-    pdf.set_xy(120, y3 + 3)
-    pdf.set_font("DejaVu", "", 6.8)
-    pdf.set_text_color(*GRI)
+    # Project -> turlar oku
     ok_dikey(pdf, 105, y3 + 14, y3 + 22)
     # İki tur
     y4 = y3 + 22

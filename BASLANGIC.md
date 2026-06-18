@@ -9,8 +9,13 @@ sen çoğunlukla **kopyala–yapıştır** ve birkaç tıklama yapacaksın.
 >
 > Bu repo: **https://github.com/Alpay565/Kalite-Iskarta-Takibi**
 
-Süreç 7 bölüm: 1) Google Sheet → 2) Claude Project → 3) Connector → 4) İki tur →
+Süreç 7 bölüm: 1) Google Sheet → 2) Claude Project → 3) Veriyi Claude'a ekle → 4) İki tur →
 5) Apps Script (dashboard) → 6) Doğrulama+Bonus → 7) Teslim.
+
+> ℹ️ **Not:** İş Google Workspace'i kurumsal politika nedeniyle Claude'a **Connector** ile
+> bağlanmıyor. Bu yüzden veriyi Claude'a **dosya** olarak veriyoruz. "Canlı veri" yine
+> sağlanıyor: ürettiğimiz dashboard (Apps Script) Google Sheet'i çalışma anında okuyor
+> (Bölüm 6, canlı veri testi). Veri **sentetik** olduğu için bu tamamen uygundur.
 Her adımda **📸** gördüğün yerde ekran görüntüsü al (sonra rapora/teslime gerekli).
 
 ---
@@ -31,14 +36,11 @@ Her adımda **📸** gördüğün yerde ekran görüntüsü al (sonra rapora/tes
    *(`.md` kabul etmezse `.txt` yap ya da içeriğini kopyalayıp o alana yapıştır.)* → 📸 (`project-skill.png`)
    > Not: Bazı arayüzlerde bu bölüm "Knowledge/Bilgi" adıyla geçer; işlev aynıdır.
 
-## BÖLÜM 3 — Sheet'i Claude'a bağla (canlı veri / Connector)
-8. **Google Drive bağlayıcısını kur ve Sheet'i bağla:**
-   - **a) Bağlayıcıyı aç (bir kerelik):** Sol **en altta adına** (**"Alpay Mutlu · Pro plan"**) tıkla →
-     **Settings / Ayarlar → Connectors / Bağlayıcılar → Google Drive → Connect** → Google hesabınla izin ver.
-     *(Göremezsen "Browse / Add connectors" ya da "Feature preview" altına bak.)*
-   - **b) Sheet'i sohbete getir:** Projede **New chat** aç → mesaj kutusundaki **`+`** →
-     **Google Drive / Add from Drive** → Bölüm 1'deki Sheet'i (örn. *S2-Kalite-Veri*) seç. → 📸 (`connector-bagli.png`)
-   > Files = sabit dosya; **Connector = canlı bağlantı** (Sheet değişince Claude güncel halini okur). "Canlı veri" puanı buradan gelir.
+## BÖLÜM 3 — Veriyi Claude'a ekle (dosya olarak)
+8. GitHub'dan **`veri/veri.csv`**'yi indir (Download raw file). Sonra **`uretim-standardi.md`**'yi
+   eklediğin gibi: sağdaki **"Files"** kutusunun **`+`**'sına tıkla → **`veri.csv`**'yi yükle.
+   - Artık projedeki sohbetler hem üretim standardını hem örnek veriyi görür.
+   - *(Connector kullanmıyoruz; canlı veri Bölüm 5'teki Apps Script panosu ile sağlanıyor.)*
 
 ## BÖLÜM 4 — İki tur (kanıt sohbetleri)
 > Amaç: yönetişimin işe yaradığını göstermek. **Gerçek** sohbetler olmalı (uydurma yasak).

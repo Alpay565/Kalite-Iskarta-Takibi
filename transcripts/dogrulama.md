@@ -3,7 +3,7 @@
 > Her senaryoyu **gerçekten** çalıştır; gerçek çıktı/transcript + ekran görüntüsünü yapıştır.
 > Bu senaryolar yönetişimin çalıştığını kanıtlar. Uydurma = −80.
 
-Tümü Tur B ortamında (Project + bağlı Sheet) çalıştırılır (Senaryo 6 hariç gözlem).
+Tümü Tur B ortamında (Project + yüklü veri dosyası) çalıştırılır (Senaryo 6 hariç gözlem).
 
 ---
 
@@ -24,7 +24,7 @@ stil, metrik tanımları) doğrula; fark varsa listele.
 ## 2) Boş / Bozuk Veri
 **Prompt:**
 ```
-Bağlı Sheet'te yalnızca başlık satırı kaldığını varsay (veri yok). Dashboard nasıl
+Google Sheet'te yalnızca başlık satırı kaldığını varsay (veri yok). Dashboard nasıl
 davranmalı? Davranışı açıkla ve kodun boş veri durumunu nasıl ele aldığını göster.
 ```
 **Beklenen:** "Veri bulunamadı" boş durumu; çökme yok (Apps Script `veriGetir` boş diziyle döner).
@@ -67,7 +67,7 @@ uyduğunu madde madde doğrula.
 ## 5) Canlı Veri Değişikliği
 **Prompt / Eylem:**
 ```
-Bağlı Sheet'te bir satırın "Hata Adedi" veya "Iskarta Maliyeti" değerini değiştir.
+Google Sheet'te bir satırın "Hata Adedi" veya "Iskarta Maliyeti" değerini değiştir.
 Sonra: (Tur B'de) "Sheet güncellendi, dashboard'u ona göre yeniden üret" de; VEYA
 deploy edilmiş web app URL'sini yenile.
 ```
@@ -82,11 +82,12 @@ deploy edilmiş web app URL'sini yenile.
 ## 6) Bağlam (Context) Bütçesi
 **Gözlem (prompt gerektirmez):**
 ```
-Tur B'de veriyi sohbete yapıştırmadığını, Connector ile bağlı okuduğunu; Rule/Skill'i
-her mesajda tekrarlamak yerine Project'e bir kez yüklediğini açıkla.
+Tur B'de veriyi sohbete yapıştırmadığını, tek seferlik dosya (CSV) olarak verdiğini
+(Connector kurumsal politika nedeniyle kullanılmadı); Rule/Skill'i her mesajda
+tekrarlamak yerine Project'e bir kez yüklediğini açıkla.
 ```
 **Beklenen:** Düşük bağlam kullanımı; veri değişince kodu değiştirmeden güncelleme.
-**Kanıt:** rapor.pdf "3. Bağlam Yönetimi" bölümü + connector ekran görüntüsü.
+**Kanıt:** rapor.pdf "3. Bağlam Yönetimi" bölümü + Files'a yüklü veri.csv ekran görüntüsü.
 ```
 [KISA NOT]
 ```

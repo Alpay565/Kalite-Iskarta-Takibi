@@ -90,3 +90,52 @@ Geliştirme alanı: Şu an dönem ayrımı veriyi tarih ortasından ikiye bölü
 ## 8. Doğrulama ve Kanıt
 
 Altı doğrulama senaryosu transcripts/dogrulama.md içinde adım adım yer alır: (1) tekrar üretilebilirlik, (2) boş/bozuk veri, (3) kural ihlali denemesi, (4) standardın uygulanışı, (5) canlı veri değişikliği, (6) bağlam bütçesi. Yönetişim QA betiği (otomasyon/kural-denetimi.py) satır içi stil/script ve gömülü veri denetimini 8/8 PASS ile geçer (otomasyon/kanit-log.txt).
+
+
+## 9. Ekran Görüntüleri ve Kanıt
+
+Aşağıda dashboard'un dört ekranının gerçek görüntüleri yer alır. claude.ai (Project/Rule/Skill), Connector, iki tur, canlı veri ve tetikleyici kanıtları gerçek oturumlardan eklenir; ilgili PNG'ler ekran-goruntuleri/ klasörüne konup rapor yeniden üretildiğinde otomatik olarak buraya gömülür.
+
+
+### Dashboard ekranları
+
+**E1 — Genel Bakış (6 KPI: Üretim, Hata, PPM, FPY, Iskarta ₺, En Sık Hata)**
+
+![E1 — Genel Bakış (6 KPI: Üretim, Hata, PPM, FPY, Iskarta ₺, En Sık Hata)](../ekran-goruntuleri/dashboard-genel.png)
+
+**E2 — Trend (aylık PPM + önceki dönem referansı; aylık ıskarta maliyeti)**
+
+![E2 — Trend (aylık PPM + önceki dönem referansı; aylık ıskarta maliyeti)](../ekran-goruntuleri/dashboard-trend.png)
+
+**E3 — Pareto (hata tipleri 80/20 + hat bazında kırılım)**
+
+![E3 — Pareto (hata tipleri 80/20 + hat bazında kırılım)](../ekran-goruntuleri/dashboard-pareto.png)
+
+**E4 — Kritik Tablo (en yüksek maliyetli kayıtlar + durum rozetleri)**
+
+![E4 — Kritik Tablo (en yüksek maliyetli kayıtlar + durum rozetleri)](../ekran-goruntuleri/dashboard-tablo.png)
+
+
+### Süreç ve kanıt görüntüleri (gerçek oturumlardan eklenecek)
+
+**Project — Kalıcı Talimat (Rule) yüklü** — _eklenecek: `ekran-goruntuleri/project-rule.png`_
+
+**Project — Üretim Standardı (Skill) yüklü** — _eklenecek: `ekran-goruntuleri/project-skill.png`_
+
+**Connector — Google Sheets bağlı** — _eklenecek: `ekran-goruntuleri/connector-bagli.png`_
+
+**Tur A — boş sohbet, 1. deneme** — _eklenecek: `ekran-goruntuleri/turA-deneme1.png`_
+
+**Tur A — boş sohbet, 2. deneme** — _eklenecek: `ekran-goruntuleri/turA-deneme2.png`_
+
+**Tur B — Project içinde üretim, 1. deneme** — _eklenecek: `ekran-goruntuleri/turB-uretim1.png`_
+
+**Tur B — kararlılık, 2. deneme** — _eklenecek: `ekran-goruntuleri/turB-uretim2.png`_
+
+**Canlı veri — değişiklik öncesi** — _eklenecek: `ekran-goruntuleri/dogrulama-canli-once.png`_
+
+**Canlı veri — değişiklik sonrası** — _eklenecek: `ekran-goruntuleri/dogrulama-canli-sonra.png`_
+
+**Bonus — tetikleyici çalıştırma günlüğü** — _eklenecek: `ekran-goruntuleri/tetikleyici-log.png`_
+
+**Bonus — günlük kalite özeti e-postası** — _eklenecek: `ekran-goruntuleri/tetikleyici-eposta.png`_

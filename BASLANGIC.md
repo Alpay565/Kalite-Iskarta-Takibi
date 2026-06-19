@@ -59,7 +59,11 @@ Her adımda **📸** gördüğün yerde ekran görüntüsü al (sonra rapora/tes
     - Soldaki **`Code.gs`** zaten var → içini sil, **`Kod.gs`** içeriğini yapıştır.
     - Sol üstte **+ → HTML** → ad **`index`** → `index.html` içeriği.
     - Aynı şekilde **`stil`** (← `stil.html`) ve **`script`** (← `script.html`).
-    > Dosya adları birebir `index`, `stil`, `script`, `Kod` olmalı.
+    > ⚠️ **ÇOK ÖNEMLİ — dosya tipi:** `+`'ya basınca **"HTML"** seç (**"Script" DEĞİL**).
+    > `index`, `stil`, `script` üçü de **HTML dosyası**; yalnız **`Kod`** Script (`.gs`).
+    > Yanlışlıkla Script seçip HTML yapıştırırsan **`Syntax error: Unexpected token '<'`** alırsın
+    > → o dosyayı **sil** (adın yanındaki **⋮ → Sil**), sonra **`+` → HTML** ile yeniden oluştur.
+    > Adlar birebir `index`, `stil`, `script`, `Kod` olmalı (Apps Script HTML'lere `.html` ekler).
 14. **Kaydet** (💾). Sağ üstte **Deploy → New deployment → Web app**:
     *Execute as: Me* · *Who has access: Anyone* → **Deploy**.
     *(Kurum hesabın "Anyone"a izin vermezse "Anyone within VALEO" veya "Only myself" seç.)*

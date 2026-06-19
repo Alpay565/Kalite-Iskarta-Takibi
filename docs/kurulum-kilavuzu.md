@@ -62,6 +62,9 @@ yol gösterir. Her şey **tarayıcı tabanlıdır** (iş bilgisayarına kurulum 
    - **+ > HTML** → ad: `stil` → içerik: `stil.html`
    - **+ > HTML** → ad: `script` → içerik: `script.html`
    - (Manifesti görmek için) ⚙ **Project Settings > "Show appsscript.json"** işaretle → `appsscript.json` içeriğini yapıştır.
+   > ⚠️ **Dosya tipi kritik:** `+` menüsünden **HTML** seç (Script DEĞİL). `index`, `stil`,
+   > `script` → **HTML**; yalnız `Kod` → **Script (.gs)**. Yanlışlıkla Script seçersen
+   > **`Syntax error: Unexpected token '<'`** alırsın → o dosyayı sil, `+ > HTML` ile yeniden yap.
    > Dosya adları **birebir** `index`, `stil`, `script`, `Kod` olmalı (include bunlara göre çalışır).
 3. **Kaydet** (💾). **Dağıt (Deploy) > Yeni dağıtım > Tür: Web uygulaması.**
    - "Execute as": **Me** · "Who has access": **Anyone** (kurum hesabında engelliyse **Anyone within VALEO** veya **Only myself**).

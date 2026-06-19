@@ -32,6 +32,8 @@ düzenleme**; kaynağı düzenle, betiği çalıştır.
 ## Deploy (özet — tam adım: docs/kurulum-kilavuzu.md §6)
 1. Google Sheet (sayfa adı `veri`) → **Uzantılar > Apps Script**.
 2. Editörde dosyaları oluştur: `Kod` (script) ve `index`, `stil`, `script` (HTML) — adlar **birebir**.
+   > ⚠️ `index/stil/script` dosyalarını **+ → HTML** ile oluştur (Script değil); yoksa
+   > `Unexpected token '<'` hatası alırsın. Yalnız `Kod` Script (`.gs`).
 3. **Dağıt > Yeni dağıtım > Web uygulaması** → yetkilendir (Sheets + Drive + Mail) → Web app URL.
 
 ## Tasarım / Kurallar (özet)
